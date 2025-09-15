@@ -1,5 +1,3 @@
-profile:
-  default: development
 project:
   type: website
   pre-render:
@@ -7,26 +5,39 @@ project:
   post-render:
     - ./post-render.py
   render:
-    - "RESUME.md"
+    - "index.qmd"
+    - "RESUME.qmd"
+    - "publications.qmd"
+
 website:
+  title: "Elias Del Pozo"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Home"
+      - href: RESUME.qmd
+        text: "CV"
+      - href: publications.qmd
+        text: "Publications"
   page-footer:
     border: true
     background: dark
     center: 
-      - text: "<b>Download PDF</b>"
+      - text: "<b>Download presentation</b>"
         href: /index.pdf
+      - text: "<b>Download CV</b>"
+        href: /RESUME.pdf
+      - text: "<b>Download Publications</b>"
+        href: /publications.pdf
+
 format-links: false
 format:
   html:
-    theme:
-      light: cosmo
-      dark: darkly
+    theme: minty
     css: styles.css
     link-external-newwindow: true
     canonical-url: true
   pdf: default
+
 resources:
   - CNAME
-
-
-

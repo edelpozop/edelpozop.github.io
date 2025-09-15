@@ -1,0 +1,35 @@
+::: {.row}
+::: {.col-md-8}
+
+# Hello!
+
+::: {.justify}
+I am Alberto Cascajo, a post-doctoral researcher in University Carlos III of Madrid.
+
+I received the PhD degree in Computer Science and Technology at the Carlos III University of Madrid in 2021. He completed a Bachelor’s Degree in Computer Science and a Master’s Degree in Computer Science and Technology at the same university, being part of the ARCOS research group since 2013.
+
+Initially, my research was focused on the development of railway construction simulators. Since 2017, this research interest includes High Performance Computing (HPC), Quantum Computing (QC), Hybrid HPC-QC, code optimization, monitoring and scheduling at a node and application levels. I am the author of eight papers published in scientific journals, and more than twenty in national and international conferences. I have also participated in twenty different researching projects (including national and international) and have been IP in one internal researching project at UC3M.
+
+
+You can also see my [CV](RESUME.html).
+:::
+
+:::
+
+::: {.col-md-4 .text-center}
+
+![Photo](image.png){.img-fluid .rounded-circle width="200px"}
+
+**Contacto**  
+📧 [edelpozo@inf.uc3m.es](mailto:acascajo@inf.uc3m.es)  
+💼 [LinkedIn](https://www.linkedin.com/in/albertocascajosofteng/)  
+🐙 [GitHub](https://github.com/edelpozop)
+:::
+:::
+
+
+
+
+
+
+

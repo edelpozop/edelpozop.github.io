@@ -1,0 +1,74 @@
+# My publications 
+
+::: {.justify}
+
+## Journal Papers
+
+- Hierarchical and distributed data storage for computing continuum. Elias Del-Pozo, Félix Garcia-Carballeira, Diego Camarmas-Alonso, Alejandro Calderon-Mateos. Future Generations Computer Systems, page 107931, 2025. ISSN 0167-739X. [Q1, Computer science, theory & methods]. DOI: https://doi.org/10.1016/j.future.2025.107931
+
+- CREATOR: An Educational Integrated Development Environment for RISC-V Programming. D. Camarmas-Alonso, F. Garcia-Carballeira, A. Calderon-Mateos and E. Del-Pozo-Puñal, IEEE Access, DOI: https://10.1109/ACCESS.2024.3406935
+
+- A scalable simulator for cloud, fog and edge computing platforms with mobility support. Elias Del-Pozo, Félix Garcia-Carballeira, Diego Camarmas-Alonso, Alejandro Calderon-Mateos. Future Generations Computer Systems. Volume 144, 2023, Pages 177-130, ISSN 0167-739X. DOI: https://doi.org/10.1016/j.future.2023.02.010
+
+
+## International Conference Papers
+
+- ENIGMA: A Scalable Simulator for IoT and Edge Computing. Elías Del-Pozo, Félix García-Carballeira, Diego Camarmas-Alonso. Conferencia PDP2023. Nápoles, Italia. DOI: https://doi.org/10.1109/PDP55904.2022.00035
+            
+- A Proposal of Mobility Support for the SimGrid Toolkit: Application to IoT Simulations. Elías Del-Pozo, Félix García-Carballeira. Conference PDP2022. Valladolid, España. DOI: https://doi.org/10.1109/PDP55904.2022.00035   
+
+- A new generic simulator for the teaching of assembly programming. Diego Camarmas-Alonso, Félix García-Carballeira, Elías Del-Pozo-Puñal, Alejandro Calderón Mateos. CLEI 2021: La Conferencia Latinoamericana de Informática, Tecnológico de Costa Rica, Costa Rica, 25-29 de octubre, 2021. DOI: http://dx.doi.org/10.1109/CLEI53233.2021.9640144 
+
+- Fast Simulation of DEVS models using the SimGrid Framework. Elías Del-Pozo, Félix García-Carballeira, Poster. Conference ANNSIM’21, 2021, George Mason University, Fairfax, VA (Hybrid event).   
+
+- A generic simulator for Edge Computing platforms. Elías Del-Pozo, Félix García-Carballeira, 2020 International Conference on High Performance Computing, Barcelona, Spain, March 2021, 2021.   
+
+
+## National Conference Papers
+
+- Sistema de almacenamiento para computing continuum: aplicación a sistemas de información ferroviaria. E. Del-Pozo-Puñal, F. Garcia Carballeira, D. Camarmas Alonsoy A. Calderon Mateos, en Avances en Arquitectura y Tecnología de Computadores. Actas de las Jornadas SARTECO, Seville, Spain, jun. 2025, pp. 315-324. DOI: https://doi.org/10.5281/zenodo.15773179
+
+- Servicio de laboratorio remoto para la integración del simulador CREATOR con hardware RISC-V. D. Camarmas-Alonso, F. Garcia-Carballeira, A. Calderon-Mateos y E. Del-Pozo-Puñal, en Avances en Arquitectura y Tecnología de Computadores. Actas de las Jornadas SARTECO, A Coruña, Spain, jun. 2024, pp. 365-371. DOI: https://10.5281/zenodo.11632955
+
+- Evaluación del rendimiento de un sistema de ficheros para sistemas IoT. E. Del-Pozo-Puñal, F. Garcia-Carballeira, D. Camarmas-Alonso y A. Calderon-Mateos. Avances en Arquitectura y Tecnología de Computadores. Actas de las Jornadas SARTECO, A Coruña, Galicia, España, jun. 2024, pp. 289-298. DOI: https://10.5281/zenodo.12094742
+
+- Sistema de Ficheros Distribuido para IoT basado en Expand. E. Del-Pozo-Puñal, F. Garcia-Carballeira, D. Camarmas-Alonso and A. Calderon-Mateos. XXXIII Jornadas del Paralelismo (JP23), Ciudad Real, sep. 2023. DOI: https://10.5281/zenodo.10706248
+
+- Integración del simulador CREATOR con hardware RISC-V: caso de estudio con microcontrolador ESP32. Diego Camarmas-Alonso, Felix Garcia-Carballeira, Alejandro Calderon-Mateos and Elías Del-Pozo-Puñal. XXXIII Jornadas de Paralelismo (JP23), Ciudad Real, sep. 2023. DOI: https://10.5281/zenodo.8378899
+
+- Simulación de modelos DEVS utilizando SimGrid. Elías Del-Pozo, Félix García-Carballeira, José Luis Risco-Martín, Katzalin Olcoz. XXXII Jornadas de Paralelismo (JP22), Alicante, España, 21-23 de septiembre, 2022. DOI: https://10.5281/zenodo.10706595
+
+- Una propuesta para el uso de dispositivos móviles en SimGrid: Aplicación a las simulaciones de IoT. Elías Del-Pozo, Félix García-Carballeira, Diego Camarmas-Alonso. XXXII Jornadas de Paralelismo (JP22), Alicante, España, 21-23 de septiembre, 2022. DOI: https://10.5281/zenodo.10706513 
+
+CREATOR: Simulador didáctico y genérico para la programación en ensamblador. Diego Camarmas-Alonso, Félix García-Carballeira, Elías Del-Pozo-Puñal, Alejandro Calderón Mateos. XXXI Jornadas de Paralelismo (JP20/21), Malaga, jul. 2021. DOI: https://10.5281/zenodo.5130302 
+
+
+##	Projects: 
+
+- Nuevas técnicas escalables de E/S para cargas de trabajo híbridas de HPC e intensivas en datos (SCIOT). Ref. PID2022-138050NB-I00, State Investigation Agency. URL: https://researchportal.uc3m.es/display/act560656
+
+- Integrated development environment for teaching and research on RISC-V processors. Ref. PDC2023-145832-I00, Spanish Ministry of Science and Innovation.
+
+- Expand - Sistema de almacenamiento de altas prestaciones para entornos HPC y Big Data. Ref. TED2021-131798B-I00, State Investigation Agency.
+
+-  Towards Unification of HPC and Big Data Paradigms (BIGHPC). Ministerio de Economía y Competitividad, TIN2016-79637-P. IPs: Jesús Carretero Pérez y Félix García Carballeira (UC3M). URL: https://www.arcos.inf.uc3m.es/bighpc/
+
+- ConvergenciA Big dAta-Hpc: de Los sensores a las Aplicaciones (CABAHLA). Comunidad Autónoma de Madrid, P2018/TCS-4423. IP: Francisco Tirado Fernández (UCM) URL: https://cabahla.org/
+
+- New Data Intensive Computing Methods for High-End and Edge Computing Platforms (DECIDE). Spanish Ministry of Science and Innovation, PID2019-107858GB-I00. IP: Jesús Carretero Pérez y Félix García Carballeira (UC3M). URL: https://www.arcos.inf.uc3m.es/decide/
+
+- Expansion of program functionalities: Energy supply analysis and calculation system (SYCE). ADIF. 01/2023 - 04/2024
+
+- Program Maintenance: Energy Supply Calculation and Analysis System (SYCE). ADIF. 04/2021 - 12/2021
+	
+
+##	Event organizations:
+
+- 30th International European Conference on Parallel and Distributed Computing (Euro-Par 2024)
+Main organizers: Jesús Carretero, Sameer Shende.
+Date: 26/08/2024 – 30/08/2024
+Place: Madrid, España
+Participation: Organización del evento. 
+
+:::
+	
