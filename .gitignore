@@ -1,0 +1,5 @@
+/.quarto/
+_site/
+index.tex
+index.html
+.resume_env/

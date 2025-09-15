@@ -1,0 +1,53 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Reset gh-pages branch
+        run: |
+          #!/bin/bash
+          # Prevents gh-pages branch from exploding in size
+
+          CURRENT_BRANCH=`git symbolic-ref --short HEAD`
+          TEMP_BRANCH="temp-branch-$(date +%s)"
+          ORIGIN_BRANCH='gh-pages'
+          echo "TEMP_BRANCH='$TEMP_BRANCH'"
+          git switch --orphan $TEMP_BRANCH
+          git config user.name 'Github Action' 
+          git config user.email 'ask@toknow.ai'
+          git show $CURRENT_BRANCH:CNAME > CNAME || git show $ORIGIN_BRANCH:CNAME > CNAME || echo "CNAME file does not exist"
+          git show $CURRENT_BRANCH:deployment-in-progress.html > index.html
+          git show $CURRENT_BRANCH:deployment-in-progress.html > 404.html
+          echo "Pages deployed on - $(date)" > README.md
+          git add CNAME index.html 404.html README.md
+          git commit -m "Pages deployed on - $(date)"
+          git push origin $TEMP_BRANCH:$ORIGIN_BRANCH --force
+          git checkout $CURRENT_BRANCH
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with: 
+          tinytex: true 
+      
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
