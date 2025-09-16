@@ -16,12 +16,48 @@ You can also see my [CV](RESUME.html).
 ![Photo](image.png){.img-fluid .rounded-circle width="200px"}
 
 **Contacto**  
-- icon: envelope
-  href: mailto:edelpozo@inf.uc3m.es
-- icon: linkedin
-  href: https://www.linkedin.com/in/edelpozop
-- icon: github 
-  href: https://github.com/edelpozop
+  <!-- Email -->
+  <a href="mailto:edelpozo@inf.uc3m.es" target="_blank" title="Email">
+    <i class="bi bi-envelope-fill" style="font-size:2rem; margin:10px;"></i>
+  </a>
+
+  <!-- Teléfono -->
+  <a href="tel:+34123456789" target="_blank" title="Phone">
+    <i class="bi bi-telephone-fill" style="font-size:2rem; margin:10px;"></i>
+  </a>
+
+  <!-- Dirección -->
+  <a href="Leganes, Spain" target="_blank" title="Address">
+    <i class="bi bi-geo-alt-fill" style="font-size:2rem; margin:10px;"></i>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/edelpozop/" target="_blank" title="LinkedIn">
+    <i class="bi bi-linkedin" style="font-size:2rem; margin:10px;"></i>
+  </a>
+
+  <!-- ResearchGate -->
+  <a href="https://www.researchgate.net/profile/Elias-Del-Pozo-Punal" target="_blank" title="ResearchGate">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg"
+         style="width:2rem; margin:10px; filter: invert(23%) sepia(94%) saturate(1857%) hue-rotate(140deg) brightness(92%) contrast(97%);" />
+  </a>
+
+  <!-- Google Scholar -->
+  <a href="https://scholar.google.es/citations?user=ea_asCUAAAAJ" target="_blank" title="Google Scholar">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg"
+         style="width:2rem; margin:10px; filter: invert(17%) sepia(100%) saturate(3437%) hue-rotate(216deg) brightness(90%) contrast(93%);" />
+  </a>
+
+  <!-- GitHub -->
+  <a href="https://github.com/edelpozop" target="_blank" title="GitHub">
+    <i class="bi bi-github" style="font-size:2rem; margin:10px;"></i>
+  </a>
+
+  <!-- ORCID -->
+  <a href="https://orcid.org/0000-0001-8679-6975" target="_blank" title="ORCID">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg"
+         style="width:2rem; margin:10px; filter: invert(41%) sepia(91%) saturate(1063%) hue-rotate(92deg) brightness(91%) contrast(95%);" />
+  </a>
 :::
 :::
 
