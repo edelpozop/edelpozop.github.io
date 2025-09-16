@@ -22,7 +22,7 @@ You can also see my [CV](RESUME.html).
   </a>
 
   <!-- Teléfono -->
-  <a href="tel:+34123456789" target="_blank" title="Phone">
+  <a href="tel:+34916246260" target="_blank" title="Phone">
     <i class="bi bi-telephone-fill" style="font-size:2rem; margin:10px;"></i>
   </a>
 
