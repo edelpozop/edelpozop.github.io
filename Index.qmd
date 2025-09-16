@@ -16,9 +16,12 @@ You can also see my [CV](RESUME.html).
 ![Photo](image.png){.img-fluid .rounded-circle width="200px"}
 
 **Contacto**  
-📧 [edelpozo@inf.uc3m.es](mailto:edelpozop@inf.uc3m.es)  
-💼 [LinkedIn](https://www.linkedin.com/in/edelpozop/)  
-🐙 [GitHub](https://github.com/edelpozop)
+- icon: envelope
+  href: mailto:edelpozo@inf.uc3m.es
+- icon: linkedin
+  href: https://www.linkedin.com/in/edelpozop
+- icon: github 
+  href: https://github.com/edelpozop
 :::
 :::
 

@@ -5,30 +5,30 @@ project:
   post-render:
     - ./post-render.py
   render:
-    - "index.qmd"
-    - "RESUME.qmd"
-    - "publications.qmd"
+    - "Index.qmd"
+    - "Resume.qmd"
+    - "Publications.qmd"
 
 website:
   title: "Elias Del Pozo"
   navbar:
     left:
-      - href: index.qmd
+      - href: Index.qmd
         text: "Home"
-      - href: RESUME.qmd
+      - href: Resume.qmd
         text: "CV"
-      - href: publications.qmd
+      - href: Publications.qmd
         text: "Publications"
   page-footer:
     border: true
     background: dark
     center: 
       - text: "<b>Download presentation</b>"
-        href: /index.pdf
+        href: /Index.pdf
       - text: "<b>Download CV</b>"
-        href: /RESUME.pdf
+        href: /Resume.pdf
       - text: "<b>Download Publications</b>"
-        href: /publications.pdf
+        href: /Publications.pdf
 
 format-links: false
 format:
