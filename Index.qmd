@@ -15,7 +15,46 @@ You can also see my [CV](RESUME.html).
 
 ![Photo](image.png){.img-fluid .rounded-circle width="200px"}
 
-**Contacto**  
+**Contact**  
+
+<style>
+	.contact-row {
+	  display: flex;
+	  justify-content: center;
+	  gap: 30px;
+	  flex-wrap: wrap;
+	  margin-top: 20px;
+	}
+
+	.contact-item {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  text-decoration: none;
+	  color: inherit;
+	  position: relative;
+	}
+
+	.contact-item span {
+	  opacity: 0;
+	  transform: translateY(5px);
+	  transition: opacity 0.3s ease, transform 0.3s ease;
+	  font-size: 0.85rem;
+	  margin-top: 5px;
+	}
+
+	.contact-item:hover span {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+
+	.contact-item i, .contact-item img {
+	  font-size: 2rem;
+	  width: 2rem;
+	}
+</style>
+
+<div class="contact-row">
   <!-- Email -->
   <a href="mailto:edelpozo@inf.uc3m.es" target="_blank" title="Email">
     <i class="bi bi-envelope-fill" style="font-size:2rem; margin:10px;"></i>
@@ -58,6 +97,9 @@ You can also see my [CV](RESUME.html).
     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg"
          style="width:2rem; margin:10px; filter: invert(41%) sepia(91%) saturate(1063%) hue-rotate(92deg) brightness(91%) contrast(95%);" />
   </a>
+
+</div>
+
 :::
 :::
 
