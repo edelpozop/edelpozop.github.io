@@ -6,7 +6,7 @@
 ::: {.justify}
 TODO
 
-You can also see my [CV](RESUME.html).
+You can also see my [CV](Resume.html).
 :::
 
 :::
@@ -34,40 +34,12 @@ You can also see my [CV](RESUME.html).
 	  color: inherit;
 	  position: relative;
 	}
-
-	.contact-item span {
-	  opacity: 0;
-	  transform: translateY(5px);
-	  transition: opacity 0.3s ease, transform 0.3s ease;
-	  font-size: 0.85rem;
-	  margin-top: 5px;
-	}
-
-	.contact-item:hover span {
-	  opacity: 1;
-	  transform: translateY(0);
-	}
-
-	.contact-item i, .contact-item img {
-	  font-size: 2rem;
-	  width: 2rem;
-	}
 </style>
 
 <div class="contact-row">
   <!-- Email -->
   <a href="mailto:edelpozo@inf.uc3m.es" target="_blank" title="Email">
     <i class="bi bi-envelope-fill" style="font-size:2rem; margin:10px;"></i>
-  </a>
-
-  <!-- Teléfono -->
-  <a href="tel:+34916246260" target="_blank" title="Phone">
-    <i class="bi bi-telephone-fill" style="font-size:2rem; margin:10px;"></i>
-  </a>
-
-  <!-- Dirección -->
-  <a href="Leganes, Spain" target="_blank" title="Address">
-    <i class="bi bi-geo-alt-fill" style="font-size:2rem; margin:10px;"></i>
   </a>
 
   <!-- LinkedIn -->
