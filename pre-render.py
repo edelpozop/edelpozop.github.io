@@ -16,7 +16,7 @@ def clean_domain(url):
 
 def pre_render():
     # Convert RESUME.json to _variables.yml
-    with open('RESUME.json', 'r', encoding='utf-8') as json_file:
+    with open('Resume.json', 'r', encoding='utf-8') as json_file:
         meta_data = json.load(json_file)
     
     with open('_quarto-development.yml', 'w', encoding='utf-8') as yaml_file:
@@ -45,19 +45,19 @@ def pre_render():
             },
             "format": {
                 "html": {
-                    "output-file": "index.html",
+                    "output-file": "Index.html",
                     "header-includes": '\n'.join([f'<meta name="keywords" content="{keywords}">']),
                     "pagetitle": title,
                 },
                 "pdf": {
-                    "output-file": "index.pdf"
+                    "output-file": "Index.pdf"
                 }
             }
         }
         if google_analytics:
             development_profile["website"]["google-analytics"] = google_analytics
         yaml.dump(development_profile, yaml_file, default_flow_style=False, encoding='utf-8')
-    print("Created _quarto-development.yml from RESUME.json")
+    print("Created _quarto-development.yml from Resume.json")
 
     # Check for custom-domain and create CNAME file if it exists
     if custom_domain:

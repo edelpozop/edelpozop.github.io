@@ -4,7 +4,11 @@
 # Hello!
 
 ::: {.justify}
-TODO
+I am Elías Del Pozo, a PhD candidate in Computer Science and Technology at University Carlos III of Madrid (UC3M), currently in the final year of my doctoral studies.
+
+I obtained my Bachelor’s Degree in Computer Science, specializing in Computer Engineering, in 2019, and my Master’s Degree in Computer Science and Technology in 2020, both at UC3M. Since 2013, I have been part of the ARCOS research group.
+
+My research interests include High Performance Computing (HPC), Computing Continuum, Internet of Things (IoT), and simulation of edge and fog environments. Throughout my PhD, I have published two articles in scientific journals, presented my work in more than five national conferences, and participated in four international conferences.
 
 You can also see my [CV](Resume.html).
 :::
