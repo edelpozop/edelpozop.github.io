@@ -9,7 +9,7 @@ def delete_func(file_name: str):
 
 def post_render():
     # Delete _quarto-development.yml
-    #delete_func('_quarto-development.yml')
+    delete_func('_quarto-development.yml')
 
     # Delete CNAME
     delete_func('CNAME')
