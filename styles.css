@@ -1,0 +1,70 @@
+.nav-footer-center {
+    margin: 0;
+}
+
+main {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.nav-footer-left, .nav-footer-right {
+    display: none;
+}
+
+@media print { 
+    .no-print, .no-print *, footer, footer *, header, header * {
+        display: none !important;
+    }
+}
+
+/* OTHER STYLES */
+
+/* --- Estilos personalizados para index.qmd --- */
+
+/* Ajustar separación entre columnas */
+.row {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Imagen de perfil */
+img.rounded-circle {
+  border: 3px solid #eee;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Bloque de contacto */
+.col-md-4 {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Estilos para links de contacto */
+.col-md-4 a {
+  color: #0077b6;
+  text-decoration: none;
+}
+
+.col-md-4 a:hover {
+  text-decoration: underline;
+  color: #005f86;
+}
+
+/* Espaciado entre iconos o líneas de contacto */
+.col-md-4 p, 
+.col-md-4 a {
+  display: block;
+  margin: 0.25rem 0;
+}
+
+/* Inline mode : justify */
+.justify {
+  text-align: justify;
+}
+/* Inline mode : center */
+.center {
+  text-align: center;
+}
