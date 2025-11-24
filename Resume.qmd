@@ -1,5 +1,5 @@
 # Elías Del Pozo
-Master of Computer Science and Technology
+PhD. of Computer Science and Technology
 | [edelpozo@inf.uc3m.es](mailto:edelpozo@inf.uc3m.es)
 | [+34 916246260](tel:+34916246260)
 | [LinkedIn.com](https://www.linkedin.com/in/edelpozop/)
@@ -9,10 +9,24 @@ Master of Computer Science and Technology
 
 ::: {.justify}
 
-TODO
+### Research Support Technician. Integrated development environment project for training and research in RISC processors.
+*September 2025 - present*
 
+### Pre-doctoral contracts for doctoral training (FPI Grant)
+*September 2020 - August 2025*
+
+- Computer Architecture: The main objective of this course is to know the basic concepts about the architecture of a computer and its impact on the performance of applications and computer systems. In its practical part, this knowledge should be applied using lock-free programming (lower-level parallelism). The language used is C/C ++.
+
+- Computer Structure: The main objective of this subject is to understand basic concepts about the organization and structure of a computer, such as data representation, basic arithmetic, execution of instructions, assembly programming, main memory, cache and virtual memory, and I/O systems. The practical environment in this subject includes the RISC-V architecture for assembly programming and microprogramming (implementing the micro-code of the instructions).
 
 ## Education
+
+### PhD. in Computer Science and Technology
+*University Carlos III of Madrid*  
+*10/11/2025 — Highest grade (cum laude)*
+
+Thesis title (es): Técnicas de gestión de datos en sistemas High-End y Esge Computing
+Thesis title (en): Data Management Techniques in High-End and Edge Computing Systems
 
 ### Master in Computer Science and Technology
 *University Carlos III of Madrid*  
@@ -27,7 +41,6 @@ Thesis title (en): Development of a generic simulator for Edge and Fog Computing
 
 Thesis title (es): Diseño y Desarrollo de un Sistema de Ficheros Distribuido y Paralelo basado en Apache Cassandra.
 Thesis title (en): Design and Development of a Distributed and Parallel File System based on Apache Cassandra.
-
 
 ## Projects
 
