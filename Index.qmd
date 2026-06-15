@@ -4,7 +4,7 @@
 # Hello!
 
 ::: {.justify}
-I am Elías Del Pozo, a PhD. in Computer and Information Technology from University Carlos III of Madrid (UC3M). My dissertation was awarded the highest grade with the "cum laude" distinction in 2025.
+I am Elías Del Pozo, a post-doctoral researcher in Polytechnic University of Madrid. My dissertation was awarded the highest grade with the "cum laude" distinction in 2025 at the University Carlos III of Madrid.
 
 I obtained my Bachelor’s Degree in Computer Science, specializing in Computer Engineering, in 2019, and my Master’s Degree in Computer Science and Technology in 2020, both at UC3M. Since 2020, I have been part of the ARCOS research group.
 
@@ -42,7 +42,7 @@ You can also see my [CV](Resume.html).
 
 <div class="contact-row">
   <!-- Email -->
-  <a href="mailto:edelpozo@inf.uc3m.es" target="_blank" title="Email">
+  <a href="mailto:e.delpozo@upm.es" target="_blank" title="Email">
     <i class="bi bi-envelope-fill" style="font-size:2rem; margin:10px;"></i>
     <span class="label">Email</span>
   </a>

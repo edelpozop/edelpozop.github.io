@@ -1,7 +1,7 @@
-# Elías Del Pozo
+# Elias Del-Pozo-Puñal
 PhD. of Computer Science and Technology
-| [edelpozo@inf.uc3m.es](mailto:edelpozo@inf.uc3m.es)
-| [+34 916246260](tel:+34916246260)
+| [e.delpozo@upm.es](mailto:e.delpozo@upm.es)
+| [+34 910672855](tel:+34910672855)
 | [LinkedIn.com](https://www.linkedin.com/in/edelpozop/)
 
 
@@ -9,10 +9,13 @@ PhD. of Computer Science and Technology
 
 ::: {.justify}
 
-### Research Support Technician. Integrated development environment project for training and research in RISC processors.
-*September 2025 - present*
+### Post-Doctoral Researcher
+*March 2026 - Present*
 
-### Pre-doctoral contracts for doctoral training (FPI Grant)
+### Research Support Technician. Integrated development environment project for training and research in RISC processors.
+*September 2025 - December 2025*
+
+### Pre-Doctoral contracts for doctoral training (FPI Grant)
 *September 2020 - August 2025*
 
 - Computer Architecture: The main objective of this course is to know the basic concepts about the architecture of a computer and its impact on the performance of applications and computer systems. In its practical part, this knowledge should be applied using lock-free programming (lower-level parallelism). The language used is C/C ++.
