@@ -8,7 +8,6 @@
           "institution": "Universidad Politécnica de Madrid (UPM)",
           "logo": "etsiinf_fondo",
           "degree": "Grado en Matemáticas e Informática",
-          "teachingTypes": ["Prácticas de Laboratorio", "Práctica (Aula-Problemas)", "Teórica presencial"],
           "ects": 6,
           "period": "Feb - May 2026",
           "language": "Español",
@@ -19,14 +18,9 @@
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Sep - Dec 2025",
-          "language": "Español",
-          "groups": [
-            { "id": "84", "rating": 4.86, "maxRating": 5 },
-            { "id": "85", "rating": 4.50, "maxRating": 5 }
-          ]
+          "language": "Español"
         }
       ]
     },
@@ -38,15 +32,9 @@
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Sep - Dec 2024",
-          "language": "Español",
-          "groups": [
-            { "id": "81", "rating": 3.55, "maxRating": 5 },
-            { "id": "84", "rating": 4.20, "maxRating": 5 },
-            { "id": "85", "rating": 4.40, "maxRating": 5 }
-          ]
+          "language": "Español"
         }
       ]
     },
@@ -58,42 +46,27 @@
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Sep - Dec 2023",
-          "language": "Español",
-          "groups": [
-            { "id": "81", "rating": 3.86, "maxRating": 5 },
-            { "id": "84", "rating": 3.47, "maxRating": 5 }
-          ]
+          "language": "Español"
         },
         {
           "name": "Estructura de Computadores",
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Sep - Dec 2023",
-          "language": "Español",
-          "groups": [
-            { "id": "85", "rating": 3.17, "maxRating": 5 }
-          ]
+          "language": "Español"
         },
         {
           "name": "Sistemas Distribuidos",
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Feb - May 2024",
-          "language": "Español",
-          "groups": [
-            { "id": "81", "rating": 3.93, "maxRating": 5 },
-            { "id": "82", "rating": 3.79, "maxRating": 5 },
-            { "id": "84", "rating": 3.67, "maxRating": 5 }
-          ]
+          "language": "Español"
         }
       ]
     },
@@ -105,29 +78,18 @@
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Sep - Dec 2022",
-          "language": "Español",
-          "groups": [
-            { "id": "80", "rating": 4.04, "maxRating": 5 },
-            { "id": "81", "rating": 4.09, "maxRating": 5 },
-            { "id": "84", "rating": 4.41, "maxRating": 5 }
-          ]
+          "language": "Español"
         },
         {
           "name": "Sistemas Distribuidos",
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Feb - May 2023",
-          "language": "Español",
-          "groups": [
-            { "id": "81", "rating": 4.10, "maxRating": 5 },
-            { "id": "82", "rating": 3.96, "maxRating": 5 }
-          ]
+          "language": "Español"
         }
       ]
     },
@@ -139,42 +101,27 @@
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Sep - Dec 2021",
-          "language": "Español",
-          "groups": [
-            { "id": "80", "rating": 4.11, "maxRating": 5 },
-            { "id": "81", "rating": 3.81, "maxRating": 5 },
-            { "id": "82", "rating": 4.05, "maxRating": 5 }
-          ]
+          "language": "Español"
         },
         {
           "name": "Sistemas Distribuidos",
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Práctica (Aula-Problemas)"],
           "ects": 6,
           "period": "Feb - May 2022",
-          "language": "Español",
-          "groups": [
-            { "id": "81", "rating": 4.42, "maxRating": 5 }
-          ]
+          "language": "Español"
         },
         {
           "name": "Sistemas Operativos",
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Feb - May 2022",
-          "language": "Español",
-          "groups": [
-            { "id": "80", "rating": 3.63, "maxRating": 5 },
-            { "id": "81", "rating": 4.00, "maxRating": 5 }
-          ]
+          "language": "Español"
         }
       ]
     },
@@ -186,15 +133,9 @@
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Sep - Dec 2020",
-          "language": "Español",
-          "groups": [
-            { "id": "81", "rating": 3.71, "maxRating": 5 },
-            { "id": "82", "rating": 3.63, "maxRating": 5 },
-            { "id": "83", "rating": 3.67, "maxRating": 5 }
-          ]
+          "language": "Español"
         }
       ]
     },
@@ -206,43 +147,27 @@
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Sep - Dec 2019",
-          "language": "Español",
-          "groups": [
-            { "id": "81", "rating": 3.35, "maxRating": 5 },
-            { "id": "82", "rating": 2.25, "maxRating": 5 },
-            { "id": "83", "rating": 3.42, "maxRating": 5 }
-          ]
+          "language": "Español"
         },
         {
           "name": "Estructura de Computadores",
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Sep - Dec 2019",
-          "language": "Español",
-          "groups": [
-            { "id": "84", "rating": 4.17, "maxRating": 5 }
-          ]
+          "language": "Español"
         },
         {
           "name": "Diseño de Sistemas Operativos",
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Grado en Ingeniería Informática",
-          "teachingTypes": ["Prácticas de Laboratorio"],
           "ects": 6,
           "period": "Feb - May 2020",
-          "language": "Español",
-          "groups": [
-            { "id": "81", "rating": 3.81, "maxRating": 5 },
-            { "id": "82", "rating": 3.63, "maxRating": 5 },
-            { "id": "83", "rating": 4.08, "maxRating": 5 }
-          ]
+          "language": "Español"
         }
       ]
     }
