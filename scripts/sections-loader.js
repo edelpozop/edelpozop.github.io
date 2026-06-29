@@ -209,13 +209,15 @@ async function loadTeaching() {
   };
 
   const renderCourseCard = (course) => {
-    const typeBadges = course.teachingTypes
+    const types = course.teachingTypes || course.teachingType || [];
+    const typeBadges = types
       .map(t => `<span style="font-size:0.72rem;padding:2px 8px;border-radius:9999px;background:#f3f4f6;color:#374151;border:1px solid #e5e7eb;font-weight:500;">${t}</span>`)
       .join('');
 
-    const groupChips = course.groups && course.groups.length > 0
+    const groups = course.groups || [];
+    const groupChips = groups.length > 0
       ? `<div class="mt-2 flex flex-wrap gap-2">
-          ${course.groups.map(g =>
+          ${groups.map(g =>
             `<span style="font-size:0.72rem;padding:2px 8px;border-radius:9999px;font-weight:500;${getRatingStyle(g.rating)}">
               Gr. ${g.id} &middot; ${g.rating.toFixed(2)}/5
             </span>`
@@ -260,7 +262,7 @@ async function loadTeaching() {
     }
 
     const sections = data.teachingActivities.map(yearEntry => {
-      const totalGroups = yearEntry.courses.reduce((sum, c) => sum + Math.max(c.groups.length, 1), 0);
+      const totalGroups = yearEntry.courses.reduce((sum, c) => sum + Math.max((c.groups || []).length, 1), 0);
       const coursesHtml = yearEntry.courses.map(renderCourseCard).join('');
 
       return `
