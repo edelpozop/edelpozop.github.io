@@ -194,3 +194,102 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Ejecutar la función
 loadPublications();
+loadTeaching();
+
+async function loadTeaching() {
+  const container = document.getElementById('teaching-list');
+  if (!container) return;
+
+  const detailsClass = 'rounded-lg border border-gray-100 bg-white p-4 [&_summary::-webkit-details-marker]:hidden';
+
+  const getRatingStyle = (rating) => {
+    if (rating >= 4.0) return 'color:#0f766e;background:#f0fdfb;border:1px solid #99e6e0;';
+    if (rating >= 3.5) return 'color:#4b5563;background:#f3f4f6;border:1px solid #d1d5db;';
+    return 'color:#6b7280;background:#f9fafb;border:1px solid #e5e7eb;';
+  };
+
+  const renderCourseCard = (course) => {
+    const typeBadges = course.teachingTypes
+      .map(t => `<span style="font-size:0.72rem;padding:2px 8px;border-radius:9999px;background:#f3f4f6;color:#374151;border:1px solid #e5e7eb;font-weight:500;">${t}</span>`)
+      .join('');
+
+    const groupChips = course.groups && course.groups.length > 0
+      ? `<div class="mt-2 flex flex-wrap gap-2">
+          ${course.groups.map(g =>
+            `<span style="font-size:0.72rem;padding:2px 8px;border-radius:9999px;font-weight:500;${getRatingStyle(g.rating)}">
+              Gr. ${g.id} &middot; ${g.rating.toFixed(2)}/5
+            </span>`
+          ).join('')}
+         </div>`
+      : '';
+
+    const logoHtml = course.logo
+      ? `<div class="flex-shrink-0 flex items-center justify-center" style="width:90px;">
+           <img src="assets/logos/${course.logo}.png" alt="${course.institution}" style="max-height:44px;max-width:84px;" class="object-contain">
+         </div>`
+      : '';
+
+    return `
+      <div class="p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all mb-3">
+        <div class="flex items-start gap-4">
+          ${logoHtml}
+          <div class="flex-grow">
+            <div class="flex flex-wrap items-center gap-3">
+              <h4 class="text-base font-bold text-gray-900">${course.name}</h4>
+              <span class="text-sm text-gray-500">${course.period}</span>
+            </div>
+            <p class="text-sm text-gray-500 mt-1">${course.institution}</p>
+            <p class="text-sm text-gray-400 mt-1 italic">${course.degree}</p>
+            <div class="mt-2 flex flex-wrap gap-2">${typeBadges}</div>
+            ${groupChips}
+          </div>
+        </div>
+      </div>
+    `;
+  };
+
+  try {
+    const response = await fetch('./content/teaching/teaching.json');
+    if (!response.ok) throw new Error('Error loading teaching.json');
+
+    const data = await response.json();
+
+    if (!data.teachingActivities || data.teachingActivities.length === 0) {
+      container.innerHTML = '<p class="text-gray-400 italic">No teaching activities available.</p>';
+      return;
+    }
+
+    const sections = data.teachingActivities.map(yearEntry => {
+      const totalGroups = yearEntry.courses.reduce((sum, c) => sum + Math.max(c.groups.length, 1), 0);
+      const coursesHtml = yearEntry.courses.map(renderCourseCard).join('');
+
+      return `
+        <details class="${detailsClass}">
+          <summary class="flex items-center justify-between gap-2 cursor-pointer select-none">
+            <h3 class="text-lg font-semibold text-gray-900">
+              ${yearEntry.academicYear}
+              <span class="text-sm font-normal text-gray-400 ml-2">${totalGroups} group${totalGroups !== 1 ? 's' : ''}</span>
+            </h3>
+            <span class="relative w-5 h-5 flex-shrink-0">
+              <i class="fa-solid fa-chevron-down text-gray-400 transition-transform publication-chevron"></i>
+            </span>
+          </summary>
+          <div class="mt-4">${coursesHtml}</div>
+        </details>
+      `;
+    });
+
+    container.innerHTML = sections.join('');
+
+    container.querySelectorAll('details').forEach(det => {
+      det.addEventListener('toggle', () => {
+        const chevron = det.querySelector(':scope > summary .publication-chevron');
+        if (chevron) chevron.style.transform = det.open ? 'rotate(180deg)' : 'rotate(0deg)';
+      });
+    });
+
+  } catch (error) {
+    console.error('Error loading teaching data:', error);
+    container.innerHTML = '<p class="text-red-500 italic text-sm">Error loading teaching activities. Please try again later.</p>';
+  }
+}
