@@ -1,0 +1,191 @@
+{
+  "journalPapers": [
+    {
+      "year": 2026,
+      "title": "CREATOR: An integrated development environment for programming assembly in RISC-V architectures",
+      "authors": "Diego Camarmas-Alonso, Félix Garcia-Carballeira, Alejandro Calderon-Mateos, Elias Del-Pozo-Puñal, Juan Carlos Cano-Resa, Elisa Utrilla-Arroyo",
+      "journal": "SoftwareX",
+      "volume": "35",
+      "issn": "2352-7110",
+      "pages": "102792",
+      "doi": "https://doi.org/10.1016/j.softx.2026.102792",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2352711026002840",
+      "bibtex": "@article{CAMARMASALONSO2026102792,\n  title = {CREATOR: An integrated development environment for programming assembly in RISC-V architectures},\n  author = {Diego Camarmas-Alonso and Felix Garcia-Carballeira and Alejandro Calderon-Mateos and Elias Del-Pozo-Puñal and Juan Carlos Cano-Resa and Elisa Utrilla-Arroyo},\n  journal = {SoftwareX},\n  volume = {35},\n  pages = {102792},\n  year = {2026},\n  issn = {2352-7110},\n  doi = {https://doi.org/10.1016/j.softx.2026.102792},\n  url = {https://www.sciencedirect.com/science/article/pii/S2352711026002840}\n}"
+    },
+    {
+      "year": 2026,
+      "title": "Expand: An ad-hoc file system for parallel and distributed environments",
+      "authors": "Diego Camarmas-Alonso, Félix Garcia-Carballeira, Alejandro Calderon-Mateos, Elias Del-Pozo-Puñal, Dario Muñoz-Muñoz, Gabriel Sotodosos-Morales, Jesús Carretero",
+      "journal": "SoftwareX",
+      "volume": "34",
+      "issn": "2352-7110",
+      "pages": "102691",
+      "doi": "https://doi.org/10.1016/j.softx.2026.102691",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2352711026001834",
+      "bibtex": "@article{CAMARMASALONSO2026102691,\n  title = {Expand: An ad-hoc file system for parallel and distributed environments},\n  author = {Diego Camarmas-Alonso and Felix Garcia-Carballeira and Alejandro Calderon-Mateos and Elias Del-Pozo-Puñal and Dario Muñoz-Muñoz and Gabriel Sotodosos-Morales and Jesus Carretero},\n  journal = {SoftwareX},\n  volume = {34},\n  pages = {102691},\n  year = {2026},\n  issn = {2352-7110},\n  doi = {https://doi.org/10.1016/j.softx.2026.102691},\n  url = {https://www.sciencedirect.com/science/article/pii/S2352711026001834}\n}"
+    },
+    {
+      "year": 2026,
+      "title": "Hierarchical and distributed data storage for computing continuum",
+      "authors": "Elias Del-Pozo-Puñal, Félix Garcia-Carballeira, Diego Camarmas-Alonso, Alejandro Calderon-Mateos",
+      "journal": "Future Generation Computer Systems",
+      "volume": "174",
+      "issn": "0167-739X",
+      "pages": "107931",
+      "doi": "https://doi.org/10.1016/j.future.2025.107931",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0167739X25002262",
+      "bibtex": "@article{DELPOZOPUNAL2026107931,\n  title = {Hierarchical and distributed data storage for computing continuum},\n  author = {Elias Del-Pozo-Puñal and Felix Garcia-Carballeira and Diego Camarmas-Alonso and Alejandro Calderon-Mateos},\n  journal = {Future Generation Computer Systems},\n  volume = {174},\n  pages = {107931},\n  year = {2026},\n  issn = {0167-739X},\n  doi = {https://doi.org/10.1016/j.future.2025.107931},\n  url = {https://www.sciencedirect.com/science/article/pii/S0167739X25002262}\n}"
+    },
+    {
+      "year": 2024,
+      "title": "CREATOR: An Educational Integrated Development Environment for RISC-V Programming",
+      "authors": "Diego Camarmas-Alonso, Felix Garcia-Carballeira, Alejandro Calderon-Mateos, Elias Del-Pozo-Puñal",
+      "journal": "IEEE Access",
+      "volume": "12",
+      "issn": "",
+      "pages": "127702-127717",
+      "doi": "https://doi.org/10.1109/ACCESS.2024.3406935",
+      "url": "",
+      "bibtex": "@ARTICLE{10540579,\n  author = {Camarmas-Alonso, Diego and Garcia-Carballeira, Felix and Calderon-Mateos, Alejandro and del-Pozo-Puñal, Elias},\n  journal = {IEEE Access},\n  title = {CREATOR: An Educational Integrated Development Environment for RISC-V Programming},\n  year = {2024},\n  volume = {12},\n  pages = {127702-127717},\n  doi = {10.1109/ACCESS.2024.3406935}\n}"
+    },
+    {
+      "year": 2023,
+      "title": "A scalable simulator for cloud, fog and edge computing platforms with mobility support",
+      "authors": "Elías Del-Pozo-Puñal, Félix García-Carballeira, Diego Camarmas-Alonso",
+      "journal": "Future Generation Computer Systems",
+      "volume": "144",
+      "issn": "0167-739X",
+      "pages": "117-130",
+      "doi": "https://doi.org/10.1016/j.future.2023.02.010",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0167739X23000511",
+      "bibtex": "@article{DELPOZOPUNAL2023117,\n  title = {A scalable simulator for cloud, fog and edge computing platforms with mobility support},\n  author = {Elías Del-Pozo-Puñal and Félix García-Carballeira and Diego Camarmas-Alonso},\n  journal = {Future Generation Computer Systems},\n  volume = {144},\n  pages = {117-130},\n  year = {2023},\n  issn = {0167-739X},\n  doi = {https://doi.org/10.1016/j.future.2023.02.010},\n  url = {https://www.sciencedirect.com/science/article/pii/S0167739X23000511}\n}"
+    }
+  ],
+  "internationalConferences": [
+    {
+      "year": 2023,
+      "title": "CREATOR: A tool for teaching assembly programming with RISC-V",
+      "authors": "Felix Garcia-Carballeira, Alejandro Calderon-Mateos, Diego Camarmas-Alonso, Elias Del-Pozo-Puñal",
+      "conference": "RISC-V Summit Europe 2023",
+      "location": "Barcelona, Spain",
+      "doi": "https://doi.org/10.13140/RG.2.2.11287.34721"
+    },
+    {
+      "year": 2023,
+      "title": "ENIGMA: A Scalable Simulator for IoT and Edge Computing",
+      "authors": "Elias Del-Pozo, Félix García-Carballeira, Diego Camarmas-Alonso",
+      "conference": "PDP2023",
+      "location": "Naples, Italy",
+      "doi": "https://doi.org/10.1109/PDP55904.2022.00035"
+    },
+    {
+      "year": 2022,
+      "title": "A Proposal of Mobility Support for the SimGrid Toolkit: Application to IoT Simulations",
+      "authors": "Elias Del-Pozo, Félix García-Carballeira",
+      "conference": "PDP2022",
+      "location": "Valladolid, Spain",
+      "doi": "https://doi.org/10.1109/PDP55904.2022.00035"
+    },
+    {
+      "year": 2021,
+      "title": "A new generic simulator for the teaching of assembly programming",
+      "authors": "Diego Camarmas-Alonso, Félix García-Carballeira, Elias Del-Pozo-Puñal, Alejandro Calderón Mateos",
+      "conference": "CLEI 2021: La Conferencia Latinoamericana de Informática",
+      "location": "Tecnológico de Costa Rica, Costa Rica",
+      "doi": "http://dx.doi.org/10.1109/CLEI53233.2021.9640144"
+    },
+    {
+      "year": 2021,
+      "title": "Fast Simulation of DEVS models using the SimGrid Framework",
+      "authors": "Elias Del-Pozo, Félix García-Carballeira",
+      "conference": "ANNSIM'21",
+      "location": "George Mason University, Fairfax, VA (Hybrid event)",
+      "doi": ""
+    },
+    {
+      "year": 2021,
+      "title": "A generic simulator for Edge Computing platforms",
+      "authors": "Elias Del-Pozo, Félix García-Carballeira",
+      "conference": "2020 International Conference on High Performance Computing",
+      "location": "Barcelona, Spain",
+      "doi": ""
+    }
+  ],
+  "nationalConferences": [
+    {
+      "year": 2025,
+      "title": "Sistema de almacenamiento para computing continuum: aplicación a sistemas de información ferroviaria",
+      "authors": "E. Del-Pozo-Puñal, F. Garcia Carballeira, D. Camarmas Alonso, A. Calderon Mateos",
+      "conference": "Avances en Arquitectura y Tecnología de Computadores. Actas de las Jornadas SARTECO",
+      "location": "Seville, Spain",
+      "pages": "315-324",
+      "doi": "https://doi.org/10.5281/zenodo.15773179"
+    },
+    {
+      "year": 2024,
+      "title": "Servicio de laboratorio remoto para la integración del simulador CREATOR con hardware RISC-V",
+      "authors": "D. Camarmas-Alonso, F. Garcia-Carballeira, A. Calderon-Mateos, E. Del-Pozo-Puñal",
+      "conference": "Avances en Arquitectura y Tecnología de Computadores. Actas de las Jornadas SARTECO",
+      "location": "A Coruña, Spain",
+      "pages": "365-371",
+      "doi": "https://doi.org/10.5281/zenodo.11632955"
+    },
+    {
+      "year": 2024,
+      "title": "Evaluación del rendimiento de un sistema de ficheros para sistemas IoT",
+      "authors": "E. Del-Pozo-Puñal, F. Garcia-Carballeira, D. Camarmas-Alonso, A. Calderon-Mateos",
+      "conference": "Avances en Arquitectura y Tecnología de Computadores. Actas de las Jornadas SARTECO",
+      "location": "A Coruña, Galicia, Spain",
+      "pages": "289-298",
+      "doi": "https://doi.org/10.5281/zenodo.12094742"
+    },
+    {
+      "year": 2023,
+      "title": "Sistema de Ficheros Distribuido para IoT basado en Expand",
+      "authors": "E. Del-Pozo-Puñal, F. Garcia-Carballeira, D. Camarmas-Alonso, A. Calderon-Mateos",
+      "conference": "XXXIII Jornadas del Paralelismo (JP23)",
+      "location": "Ciudad Real, Spain",
+      "doi": "https://doi.org/10.5281/zenodo.10706248"
+    },
+    {
+      "year": 2023,
+      "title": "Integración del simulador CREATOR con hardware RISC-V: caso de estudio con microcontrolador ESP32",
+      "authors": "Diego Camarmas-Alonso, Felix Garcia-Carballeira, Alejandro Calderon-Mateos, Elias Del-Pozo-Puñal",
+      "conference": "XXXIII Jornadas de Paralelismo (JP23)",
+      "location": "Ciudad Real, Spain",
+      "doi": "https://doi.org/10.5281/zenodo.8378899"
+    },
+    {
+      "year": 2022,
+      "title": "Simulación de modelos DEVS utilizando SimGrid",
+      "authors": "Elias Del-Pozo, Félix García-Carballeira, José Luis Risco-Martín, Katzalin Olcoz",
+      "conference": "XXXII Jornadas de Paralelismo (JP22)",
+      "location": "Alicante, Spain",
+      "doi": "https://doi.org/10.5281/zenodo.10706595"
+    },
+    {
+      "year": 2022,
+      "title": "Una propuesta para el uso de dispositivos móviles en SimGrid: Aplicación a las simulaciones de IoT",
+      "authors": "Elias Del-Pozo, Félix García-Carballeira, Diego Camarmas-Alonso",
+      "conference": "XXXII Jornadas de Paralelismo (JP22)",
+      "location": "Alicante, Spain",
+      "doi": "https://doi.org/10.5281/zenodo.10706513"
+    },
+    {
+      "year": 2021,
+      "title": "ENIGMA: Simulador de plataformas Edge y Fog Computing",
+      "authors": "Elias Del-Pozo-Puñal, Felix Garcia-Carballeira",
+      "conference": "Congreso Español de Informática (CEDI 20/21)",
+      "location": "Málaga, Spain",
+      "doi": "https://dx.doi.org/10.5281/zenodo.10953027"
+    },
+    {
+      "year": 2021,
+      "title": "CREATOR: Simulador didáctico y genérico para la programación en ensamblador",
+      "authors": "Diego Camarmas-Alonso, Félix García-Carballeira, Elias Del-Pozo-Puñal, Alejandro Calderón Mateos",
+      "conference": "XXXI Jornadas de Paralelismo (JP20/21)",
+      "location": "Malaga, Spain",
+      "doi": "https://doi.org/10.5281/zenodo.5130302"
+    }
+  ]
+}
