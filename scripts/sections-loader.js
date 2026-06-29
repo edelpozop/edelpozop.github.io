@@ -9,7 +9,7 @@ async function loadPublications() {
       <summary class="flex items-center justify-between gap-2 cursor-pointer select-none">
         <h3 class="text-lg font-semibold text-gray-900">${title}</h3>
         <span class="relative w-5 h-5 flex-shrink-0">
-          <i class="fa-solid fa-chevron-down group-open:-rotate-180 text-gray-400 transition-transform"></i>
+          <i class="fa-solid fa-chevron-down text-gray-400 transition-transform publication-chevron"></i>
         </span>
       </summary>
       <div class="mt-4">${innerHtml}</div>
@@ -166,6 +166,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Event delegation for dynamically rendered publication buttons
   const publicationsList = document.getElementById('publications-list');
+  const syncPublicationChevronState = (detailsElement) => {
+    const chevron = detailsElement.querySelector(':scope > summary .publication-chevron');
+    if (!chevron) return;
+
+    chevron.style.transform = detailsElement.open ? 'rotate(180deg)' : 'rotate(0deg)';
+  };
+
+  publicationsList?.querySelectorAll('details').forEach(syncPublicationChevronState);
+  publicationsList?.addEventListener('toggle', (event) => {
+    const detailsElement = event.target;
+    if (!(detailsElement instanceof HTMLDetailsElement)) return;
+    syncPublicationChevronState(detailsElement);
+  });
+
   publicationsList?.addEventListener('click', async (event) => {
     const button = event.target.closest('.copy-reference-btn');
     if (!button) return;
