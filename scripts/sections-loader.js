@@ -2,7 +2,7 @@ async function loadPublications() {
   const container = document.getElementById('publications-list');
   if (!container) return;
 
-  const detailsClass = 'group rounded-lg border border-gray-100 bg-white p-4 [&_summary::-webkit-details-marker]:hidden';
+  const detailsClass = 'rounded-lg border border-gray-100 bg-white p-4 [&_summary::-webkit-details-marker]:hidden';
 
   const createSectionCard = (title, innerHtml, open = false) => `
     <details class="${detailsClass}" ${open ? 'open' : ''}>
@@ -97,12 +97,6 @@ async function loadPublications() {
 
     if (sections.length > 0) {
       container.innerHTML = sections.join('');
-      container.querySelectorAll('details').forEach(det => {
-        det.addEventListener('toggle', () => {
-          const chevron = det.querySelector(':scope > summary .publication-chevron');
-          if (chevron) chevron.style.transform = det.open ? 'rotate(180deg)' : 'rotate(0deg)';
-        });
-      });
     } else {
       container.innerHTML = '<p class="text-gray-400 italic">No publications available.</p>';
     }

@@ -230,6 +230,14 @@ main.content > ol {
   }
 }
 
+/* Publication collapsible chevrons */
+.publication-chevron {
+  transition: transform 0.2s ease;
+}
+details[open] > summary .publication-chevron {
+  transform: rotate(180deg);
+}
+
 @media print {
   .no-print,
   .no-print *,
