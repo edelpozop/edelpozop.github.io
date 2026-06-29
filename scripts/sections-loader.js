@@ -97,6 +97,12 @@ async function loadPublications() {
 
     if (sections.length > 0) {
       container.innerHTML = sections.join('');
+      container.querySelectorAll('details').forEach(det => {
+        det.addEventListener('toggle', () => {
+          const chevron = det.querySelector(':scope > summary .publication-chevron');
+          if (chevron) chevron.style.transform = det.open ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+      });
     } else {
       container.innerHTML = '<p class="text-gray-400 italic">No publications available.</p>';
     }
@@ -164,22 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Event delegation for dynamically rendered publication buttons
+  // Event delegation for dynamically rendered publication copy buttons
   const publicationsList = document.getElementById('publications-list');
-  const syncPublicationChevronState = (detailsElement) => {
-    const chevron = detailsElement.querySelector(':scope > summary .publication-chevron');
-    if (!chevron) return;
-
-    chevron.style.transform = detailsElement.open ? 'rotate(180deg)' : 'rotate(0deg)';
-  };
-
-  publicationsList?.querySelectorAll('details').forEach(syncPublicationChevronState);
-  publicationsList?.addEventListener('toggle', (event) => {
-    const detailsElement = event.target;
-    if (!(detailsElement instanceof HTMLDetailsElement)) return;
-    syncPublicationChevronState(detailsElement);
-  });
-
   publicationsList?.addEventListener('click', async (event) => {
     const button = event.target.closest('.copy-reference-btn');
     if (!button) return;
