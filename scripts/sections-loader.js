@@ -1,5 +1,67 @@
 async function loadPublications() {
   const container = document.getElementById('publications-list');
+  if (!container) return;
+
+  const detailsClass = 'group rounded-lg border border-gray-100 bg-white p-4 [&_summary::-webkit-details-marker]:hidden';
+
+  const createSectionCard = (title, innerHtml, open = false) => `
+    <details class="${detailsClass}" ${open ? 'open' : ''}>
+      <summary class="flex items-center justify-between gap-2 cursor-pointer select-none">
+        <h3 class="text-lg font-semibold text-gray-900">${title}</h3>
+        <span class="relative w-5 h-5 flex-shrink-0">
+          <i class="fa-solid fa-chevron-down group-open:-rotate-180 text-gray-400 transition-transform"></i>
+        </span>
+      </summary>
+      <div class="mt-4">${innerHtml}</div>
+    </details>
+  `;
+
+  const renderPublicationCard = (pub, venueText, includeCopyReference = false) => {
+    const referenceText = pub.bibtex || `${pub.authors}. ${pub.title}. ${venueText} (${pub.year}). ${pub.doi || ''}`.trim();
+
+    return `
+      <div class="p-5 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all mb-3">
+        <div class="flex flex-col gap-3">
+          <div class="flex items-start gap-3">
+            <span class="block text-sm font-bold text-gray-500 min-w-12">${pub.year}</span>
+            <div class="flex-grow">
+              <h4 class="text-base font-bold text-gray-900 leading-snug">${pub.title}</h4>
+              <p class="text-sm text-gray-600 mt-2">${pub.authors}</p>
+              <p class="text-sm text-gray-500 italic mt-1">${venueText}</p>
+              <div class="mt-2 flex flex-wrap items-center gap-3">
+                ${pub.doi ? `<a href="${pub.doi.startsWith('http') ? pub.doi : 'https://doi.org/' + pub.doi}" target="_blank" class="text-xs font-medium text-brand-600 hover:text-brand-800 hover:underline"><i class="fa-solid fa-link mr-1"></i>DOI</a>` : ''}
+                ${includeCopyReference ? `<button type="button" class="copy-reference-btn text-xs font-medium text-brand-600 hover:text-brand-800 hover:underline" data-reference="${encodeURIComponent(referenceText)}"><i class="fa-regular fa-copy mr-1"></i>Copy reference</button>` : ''}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  };
+
+  const renderConferenceGroup = (items, title) => {
+    const byYear = {};
+    items.forEach(pub => {
+      if (!byYear[pub.year]) byYear[pub.year] = [];
+      byYear[pub.year].push(pub);
+    });
+
+    const yearSections = Object.keys(byYear)
+      .sort((a, b) => Number(b) - Number(a))
+      .map(year => {
+        const cards = byYear[year]
+          .map(pub => {
+            const venue = `${pub.conference}${pub.location ? `, ${pub.location}` : ''}${pub.pages ? `, pp. ${pub.pages}` : ''}`;
+            return renderPublicationCard(pub, venue, false);
+          })
+          .join('');
+
+        return createSectionCard(year, cards);
+      })
+      .join('');
+
+    return createSectionCard(title, yearSections);
+  };
 
   try {
     const response = await fetch('./content/publications/publications.json');
@@ -8,127 +70,35 @@ async function loadPublications() {
     const data = await response.json();
     container.innerHTML = '';
 
+    const sections = [];
+
     // Journal Papers
     if (data.journalPapers && data.journalPapers.length > 0) {
-      const journalHtml = `<h3 class="text-lg font-semibold text-gray-900 mt-6 mb-4">Journal Papers</h3>`;
-      container.insertAdjacentHTML('beforeend', journalHtml);
-      
-      data.journalPapers.sort((a, b) => b.year - a.year);
-      data.journalPapers.forEach(pub => {
-        const referenceText = pub.bibtex || `${pub.authors}. ${pub.title}. ${pub.journal}${pub.volume ? `, ${pub.volume}` : ''}${pub.pages ? `, ${pub.pages}` : ''} (${pub.year}). ${pub.doi || ''}`.trim();
-        const html = `
-          <div class="p-5 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all mb-3">
-            <div class="flex flex-col gap-3">
-              <div class="flex items-start gap-3">
-                <span class="block text-sm font-bold text-gray-500 min-w-12">${pub.year}</span>
-                <div class="flex-grow">
-                  <h4 class="text-base font-bold text-gray-900 leading-snug">${pub.title}</h4>
-                  <p class="text-sm text-gray-600 mt-2">${pub.authors}</p>
-                  <p class="text-sm text-gray-500 italic mt-1">${pub.journal}${pub.volume ? `, Vol. ${pub.volume}` : ''}${pub.pages ? `, pp. ${pub.pages}` : ''}${pub.issn ? `, ISSN: ${pub.issn}` : ''}</p>
-                  <div class="mt-2 flex flex-wrap items-center gap-3">
-                    ${pub.doi ? `<a href="${pub.doi.startsWith('http') ? pub.doi : 'https://doi.org/' + pub.doi}" target="_blank" class="text-xs font-medium text-brand-600 hover:text-brand-800 hover:underline"><i class="fa-solid fa-link mr-1"></i>DOI</a>` : ''}
-                    <button type="button" class="copy-reference-btn text-xs font-medium text-brand-600 hover:text-brand-800 hover:underline" data-reference="${encodeURIComponent(referenceText)}">
-                      <i class="fa-regular fa-copy mr-1"></i>Copy reference
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
-        container.insertAdjacentHTML('beforeend', html);
-      });
+      const journalsHtml = data.journalPapers
+        .sort((a, b) => b.year - a.year)
+        .map(pub => {
+          const venue = `${pub.journal}${pub.volume ? `, Vol. ${pub.volume}` : ''}${pub.pages ? `, pp. ${pub.pages}` : ''}${pub.issn ? `, ISSN: ${pub.issn}` : ''}`;
+          return renderPublicationCard(pub, venue, true);
+        })
+        .join('');
 
-      const copyButtons = container.querySelectorAll('.copy-reference-btn');
-      copyButtons.forEach(button => {
-        button.addEventListener('click', async () => {
-          const encodedReference = button.getAttribute('data-reference') || '';
-          const reference = decodeURIComponent(encodedReference);
-
-          try {
-            await navigator.clipboard.writeText(reference);
-          } catch (error) {
-            const fallbackInput = document.createElement('textarea');
-            fallbackInput.value = reference;
-            document.body.appendChild(fallbackInput);
-            fallbackInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(fallbackInput);
-          }
-
-          const originalHtml = button.innerHTML;
-          button.innerHTML = '<i class="fa-solid fa-check mr-1"></i>Copied';
-          setTimeout(() => {
-            button.innerHTML = originalHtml;
-          }, 1200);
-        });
-      });
+      sections.push(createSectionCard('Journal Papers', journalsHtml, true));
     }
 
     // International Conference Papers
     if (data.internationalConferences && data.internationalConferences.length > 0) {
-      const intConfHtml = `<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4">International Conference Papers</h3>`;
-      container.insertAdjacentHTML('beforeend', intConfHtml);
-      
-      // Agrupar por año
-      const byYear = {};
-      data.internationalConferences.forEach(pub => {
-        if (!byYear[pub.year]) byYear[pub.year] = [];
-        byYear[pub.year].push(pub);
-      });
-
-      // Mostrar por año descendente
-      Object.keys(byYear).sort((a, b) => b - a).forEach(year => {
-        const yearHtml = `<h4 class="text-base font-semibold text-gray-800 mt-4 mb-3">${year}</h4>`;
-        container.insertAdjacentHTML('beforeend', yearHtml);
-        
-        byYear[year].forEach(pub => {
-          const html = `
-            <div class="p-5 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all mb-3">
-              <div class="flex flex-col gap-2">
-                <h5 class="text-base font-bold text-gray-900 leading-snug">${pub.title}</h5>
-                <p class="text-sm text-gray-600">${pub.authors}</p>
-                <p class="text-sm text-gray-500">${pub.conference}${pub.location ? `, ${pub.location}` : ''}</p>
-                ${pub.doi && pub.doi !== "" ? `<div><a href="${pub.doi.startsWith('http') ? pub.doi : 'https://doi.org/' + pub.doi}" target="_blank" class="text-xs font-medium text-brand-600 hover:text-brand-800 hover:underline"><i class="fa-solid fa-link mr-1"></i>DOI</a></div>` : ''}
-              </div>
-            </div>
-          `;
-          container.insertAdjacentHTML('beforeend', html);
-        });
-      });
+      sections.push(renderConferenceGroup(data.internationalConferences, 'International Conference Papers'));
     }
 
     // National Conference Papers
     if (data.nationalConferences && data.nationalConferences.length > 0) {
-      const natConfHtml = `<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4">National Conference Papers</h3>`;
-      container.insertAdjacentHTML('beforeend', natConfHtml);
-      
-      // Agrupar por año
-      const byYear = {};
-      data.nationalConferences.forEach(pub => {
-        if (!byYear[pub.year]) byYear[pub.year] = [];
-        byYear[pub.year].push(pub);
-      });
+      sections.push(renderConferenceGroup(data.nationalConferences, 'National Conference Papers'));
+    }
 
-      // Mostrar por año descendente
-      Object.keys(byYear).sort((a, b) => b - a).forEach(year => {
-        const yearHtml = `<h4 class="text-base font-semibold text-gray-800 mt-4 mb-3">${year}</h4>`;
-        container.insertAdjacentHTML('beforeend', yearHtml);
-        
-        byYear[year].forEach(pub => {
-          const html = `
-            <div class="p-5 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all mb-3">
-              <div class="flex flex-col gap-2">
-                <h5 class="text-base font-bold text-gray-900 leading-snug">${pub.title}</h5>
-                <p class="text-sm text-gray-600">${pub.authors}</p>
-                <p class="text-sm text-gray-500">${pub.conference}${pub.location ? `, ${pub.location}` : ''}${pub.pages ? `, pp. ${pub.pages}` : ''}</p>
-                ${pub.doi && pub.doi !== "" ? `<div><a href="${pub.doi.startsWith('http') ? pub.doi : 'https://doi.org/' + pub.doi}" target="_blank" class="text-xs font-medium text-brand-600 hover:text-brand-800 hover:underline"><i class="fa-solid fa-link mr-1"></i>DOI</a></div>` : ''}
-              </div>
-            </div>
-          `;
-          container.insertAdjacentHTML('beforeend', html);
-        });
-      });
+    if (sections.length > 0) {
+      container.innerHTML = sections.join('');
+    } else {
+      container.innerHTML = '<p class="text-gray-400 italic">No publications available.</p>';
     }
 
   } catch (error) {
@@ -192,6 +162,33 @@ document.addEventListener('DOMContentLoaded', () => {
       // The link href can be updated by the user with the actual thesis URL
       // For now, prevent the default behavior
     });
+  });
+
+  // Event delegation for dynamically rendered publication buttons
+  const publicationsList = document.getElementById('publications-list');
+  publicationsList?.addEventListener('click', async (event) => {
+    const button = event.target.closest('.copy-reference-btn');
+    if (!button) return;
+
+    const encodedReference = button.getAttribute('data-reference') || '';
+    const reference = decodeURIComponent(encodedReference);
+
+    try {
+      await navigator.clipboard.writeText(reference);
+    } catch (error) {
+      const fallbackInput = document.createElement('textarea');
+      fallbackInput.value = reference;
+      document.body.appendChild(fallbackInput);
+      fallbackInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(fallbackInput);
+    }
+
+    const originalHtml = button.innerHTML;
+    button.innerHTML = '<i class="fa-solid fa-check mr-1"></i>Copied';
+    setTimeout(() => {
+      button.innerHTML = originalHtml;
+    }, 1200);
   });
 });
 
