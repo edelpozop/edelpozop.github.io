@@ -22,7 +22,8 @@
           "teachingType": [],
           "ects": 6,
           "period": "Sep - Dec 2025",
-          "language": "Español"
+          "language": "Español",
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=362&anio=2025&plan=567&asig=18272&idioma=2"
         }
       ]
     },
@@ -38,7 +39,8 @@
           "ects": 6,
           "period": "Sep - Dec 2024",
           "language": "Español",
-          "groups": []
+          "groups": [] ,
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=218&anio=2024&plan=570&asig=13874&idioma=2"
         }
       ]
     },
@@ -54,7 +56,8 @@
           "ects": 6,
           "period": "Sep - Dec 2023",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=362&anio=2025&plan=567&asig=18272&idioma=2"
         },
         {
           "name": "Computer Structure",
@@ -65,7 +68,8 @@
           "ects": 6,
           "period": "Sep - Dec 2023",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=218&anio=2026&plan=570&asig=13874&idioma=2"
         },
         {
           "name": "Distributed Systems",
@@ -76,7 +80,8 @@
           "ects": 6,
           "period": "Feb - May 2024",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=218&anio=2026&plan=489&asig=15754&idioma=2"
         }
       ]
     },
@@ -92,7 +97,8 @@
           "ects": 6,
           "period": "Sep - Dec 2022",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=362&anio=2025&plan=567&asig=18272&idioma=2"
         },
         {
           "name": "Distributed Systems",
@@ -103,7 +109,8 @@
           "ects": 6,
           "period": "Feb - May 2023",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=218&anio=2026&plan=489&asig=15754&idioma=2"
         }
       ]
     },
@@ -119,7 +126,8 @@
           "ects": 6,
           "period": "Sep - Dec 2021",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=362&anio=2025&plan=567&asig=18272&idioma=2"
         },
         {
           "name": "Distributed Systems",
@@ -130,10 +138,11 @@
           "ects": 6,
           "period": "Feb - May 2022",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=218&anio=2026&plan=489&asig=15754&idioma=2"
         },
         {
-          "name": "Sistemas Operativos",
+          "name": "Operating Systems",
           "institution": "Universidad Carlos III de Madrid (UC3M)",
           "logo": "uc3m_fondo",
           "degree": "Bachelor's Degree in Computer Engineering",
@@ -141,7 +150,8 @@
           "ects": 6,
           "period": "Feb - May 2022",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=233&anio=2026&plan=437&asig=13878&idioma=2"
         }
       ]
     },
@@ -157,7 +167,8 @@
           "ects": 6,
           "period": "Sep - Dec 2020",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=362&anio=2025&plan=567&asig=18272&idioma=2"
         }
       ]
     },
@@ -173,7 +184,8 @@
           "ects": 6,
           "period": "Sep - Dec 2019",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=362&anio=2025&plan=567&asig=18272&idioma=2"
         },
         {
           "name": "Computer Structure",
@@ -184,7 +196,8 @@
           "ects": 6,
           "period": "Sep - Dec 2019",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/generaFicha?est=218&anio=2026&plan=570&asig=13874&idioma=2"
         },
         {
           "name": "Diseño de Sistemas Operativos",
@@ -195,7 +208,8 @@
           "ects": 6,
           "period": "Feb - May 2020",
           "language": "Español",
-          "groups": []
+          "groups": [],
+          "courseLink": "https://aplicaciones.uc3m.es/cpa/cpa/generaFichaPDF?ano=2017&plan=258&asignatura=13889&idioma=2"
         }
       ]
     }

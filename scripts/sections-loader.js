@@ -246,6 +246,11 @@ async function loadTeaching() {
             ${groupChips}
           </div>
         </div>
+        <div>
+            <a target="_blank" href="${course.courseLink || '#'}" class="text-gray-400 hover:text-brand-600">
+              <i class="fa-solid fa-chalkboard-user text-xl"></i>
+            </a>
+          </div>
       </div>
     `;
   };
