@@ -231,9 +231,15 @@ async function loadTeaching() {
          </div>`
       : '';
 
+    const courseLinkHtml = course.courseLink
+      ? `<a target="_blank" href="${course.courseLink}" class="flex-shrink-0 ml-4 p-2 text-gray-400 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-all self-center">
+           <i class="fa-solid fa-chalkboard-user text-xl"></i>
+         </a>`
+      : '';
+
     return `
       <div class="p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all mb-3">
-        <div class="flex items-start gap-4">
+        <div class="flex items-center gap-4">
           ${logoHtml}
           <div class="flex-grow">
             <div class="flex flex-wrap items-center gap-3">
@@ -245,12 +251,8 @@ async function loadTeaching() {
             <div class="mt-2 flex flex-wrap gap-2">${typeBadges}</div>
             ${groupChips}
           </div>
+          ${courseLinkHtml}
         </div>
-        <div>
-            <a target="_blank" href="${course.courseLink || '#'}" class="text-gray-400 hover:text-brand-600">
-              <i class="fa-solid fa-chalkboard-user text-xl"></i>
-            </a>
-          </div>
       </div>
     `;
   };
