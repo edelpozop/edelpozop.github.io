@@ -226,8 +226,8 @@ async function loadTeaching() {
       : '';
 
     const logoHtml = course.logo
-      ? `<div class="flex-shrink-0 flex items-center justify-center" style="width:90px;">
-           <img src="assets/logos/${course.logo}.png" alt="${course.institution}" style="max-height:44px;max-width:84px;" class="object-contain">
+      ? `<div class="flex-shrink-0 flex items-center justify-center" style="width:130px;">
+           <img src="assets/logos/${course.logo}.png" alt="${course.institution}" style="max-height:100px;max-width:150px;" class="object-contain">
          </div>`
       : '';
 
