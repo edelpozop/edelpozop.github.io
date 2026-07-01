@@ -314,15 +314,21 @@ async function loadTeaching() {
           ).join('')
         }</div>`;
 
+        const periodsHtml = `<div class="flex flex-wrap gap-1.5 mt-2">${
+          subject.periods.map(p =>
+            `<span style="font-size:0.7rem;padding:2px 8px;border-radius:9999px;background:#f3f4f6;color:#374151;border:1px solid #e5e7eb;font-weight:500;white-space:nowrap;flex-shrink:0;">${p.academicYear}</span>`
+          ).join('')
+        }</div>`;
+
         const courseLinkHtml = subject.courseLink
-          ? `<a target="_blank" href="${subject.courseLink}" class="flex-shrink-0 p-2 text-gray-400 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-all">
+          ? `<a target="_blank" href="${subject.courseLink}" class="flex-shrink-0 ml-auto pl-3 p-2 text-gray-400 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-all self-start">
                <i class="fa-solid fa-chalkboard-user text-lg"></i>
              </a>`
           : '';
 
         return `
           <div class="p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all mb-3">
-            <div class="flex items-start gap-2">
+            <div class="flex items-start">
               <div class="min-w-0 flex-1">
                 <h4 class="text-base font-bold text-gray-900">${subject.name}</h4>
                 <p class="text-sm text-gray-400 italic mb-1">${subject.degree}</p>
