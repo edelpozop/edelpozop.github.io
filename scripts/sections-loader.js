@@ -39,28 +39,15 @@ async function loadPublications() {
     `;
   };
 
-  const renderConferenceGroup = (items, title) => {
-    const byYear = {};
-    items.forEach(pub => {
-      if (!byYear[pub.year]) byYear[pub.year] = [];
-      byYear[pub.year].push(pub);
-    });
-
-    const yearSections = Object.keys(byYear)
-      .sort((a, b) => Number(b) - Number(a))
-      .map(year => {
-        const cards = byYear[year]
-          .map(pub => {
-            const venue = `${pub.conference}${pub.location ? `, ${pub.location}` : ''}${pub.pages ? `, pp. ${pub.pages}` : ''}`;
-            return renderPublicationCard(pub, venue, false);
-          })
-          .join('');
-
-        return createSectionCard(year, cards);
+  const renderConferenceSection = (items, title) => {
+    const cardsHtml = items
+      .sort((a, b) => b.year - a.year)
+      .map(pub => {
+        const venue = `${pub.conference}${pub.location ? `, ${pub.location}` : ''}${pub.pages ? `, pp. ${pub.pages}` : ''}`;
+        return renderPublicationCard(pub, venue, false);
       })
       .join('');
-
-    return createSectionCard(title, yearSections);
+    return createSectionCard(title, cardsHtml);
   };
 
   try {
@@ -87,12 +74,12 @@ async function loadPublications() {
 
     // International Conference Papers
     if (data.internationalConferences && data.internationalConferences.length > 0) {
-      sections.push(renderConferenceGroup(data.internationalConferences, 'International Conference Papers'));
+      sections.push(renderConferenceSection(data.internationalConferences, 'International Conference Papers'));
     }
 
     // National Conference Papers
     if (data.nationalConferences && data.nationalConferences.length > 0) {
-      sections.push(renderConferenceGroup(data.nationalConferences, 'National Conference Papers'));
+      sections.push(renderConferenceSection(data.nationalConferences, 'National Conference Papers'));
     }
 
     if (sections.length > 0) {
@@ -268,24 +255,90 @@ async function loadTeaching() {
       return;
     }
 
-    const sections = data.teachingActivities.map(yearEntry => {
-      const totalGroups = yearEntry.courses.reduce((sum, c) => sum + Math.max((c.groups || []).length, 1), 0);
-      const coursesHtml = yearEntry.courses.map(renderCourseCard).join('');
+    // Flatten all courses with their academicYear
+    const allCourses = [];
+    data.teachingActivities.forEach(yearEntry => {
+      yearEntry.courses.forEach(course => {
+        allCourses.push({ ...course, academicYear: yearEntry.academicYear });
+      });
+    });
+
+    // Group by institution → subject name
+    const byInstitution = {};
+    allCourses.forEach(c => {
+      if (!byInstitution[c.institution]) {
+        byInstitution[c.institution] = { logo: c.logo, subjects: {} };
+      }
+      const key = c.name + '|||' + (c.degree || '');
+      if (!byInstitution[c.institution].subjects[key]) {
+        byInstitution[c.institution].subjects[key] = {
+          name: c.name,
+          degree: c.degree || '',
+          courseLink: c.courseLink || null,
+          periods: []
+        };
+      }
+      byInstitution[c.institution].subjects[key].periods.push({
+        academicYear: c.academicYear,
+        period: c.period,
+        groups: c.groups || []
+      });
+    });
+
+    const sections = Object.entries(byInstitution).map(([institution, instData]) => {
+      const subjectCards = Object.values(instData.subjects).map(subject => {
+        subject.periods.sort((a, b) => b.academicYear.localeCompare(a.academicYear));
+
+        const periodsHtml = subject.periods.map(p => {
+          const groupChips = p.groups.length > 0
+            ? p.groups.map(g =>
+                `<span style="font-size:0.7rem;padding:1px 7px;border-radius:9999px;font-weight:500;${getRatingStyle(g.rating)}">Gr. ${g.id} &middot; ${g.rating.toFixed(2)}/5</span>`
+              ).join('')
+            : '';
+          return `
+            <div class="flex flex-wrap items-center gap-2 text-sm py-1 border-t border-gray-100 first:border-0">
+              <span class="font-semibold text-gray-700 min-w-24">${p.academicYear}</span>
+              <span class="text-gray-500">${p.period}</span>
+              ${groupChips}
+            </div>`;
+        }).join('');
+
+        const courseLinkHtml = subject.courseLink
+          ? `<a target="_blank" href="${subject.courseLink}" class="flex-shrink-0 ml-4 p-2 text-gray-400 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-all self-start mt-1">
+               <i class="fa-solid fa-chalkboard-user text-xl"></i>
+             </a>`
+          : '';
+
+        return `
+          <div class="p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all mb-3">
+            <div class="flex items-start gap-3">
+              <div class="flex-grow">
+                <h4 class="text-base font-bold text-gray-900">${subject.name}</h4>
+                <p class="text-sm text-gray-400 italic mb-2">${subject.degree}</p>
+                ${periodsHtml}
+              </div>
+              ${courseLinkHtml}
+            </div>
+          </div>`;
+      }).join('');
+
+      const logoHtml = instData.logo
+        ? `<img src="assets/logos/${instData.logo}.png" alt="${institution}" style="max-height:36px;max-width:110px;" class="object-contain flex-shrink-0">`
+        : '';
 
       return `
         <details class="${detailsClass}">
-          <summary class="flex items-center justify-between gap-2 cursor-pointer select-none">
-            <h3 class="text-lg font-semibold text-gray-900">
-              ${yearEntry.academicYear}
-              <span class="text-sm font-normal text-gray-400 ml-2">${totalGroups} group${totalGroups !== 1 ? 's' : ''}</span>
-            </h3>
+          <summary class="flex items-center justify-between gap-3 cursor-pointer select-none">
+            <div class="flex items-center gap-4">
+              ${logoHtml}
+              <h3 class="text-base font-semibold text-gray-900">${institution}</h3>
+            </div>
             <span class="relative w-5 h-5 flex-shrink-0">
               <i class="fa-solid fa-chevron-down text-gray-400 transition-transform publication-chevron"></i>
             </span>
           </summary>
-          <div class="mt-4">${coursesHtml}</div>
-        </details>
-      `;
+          <div class="mt-4">${subjectCards}</div>
+        </details>`;
     });
 
     container.innerHTML = sections.join('');
