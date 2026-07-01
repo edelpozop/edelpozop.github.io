@@ -20,7 +20,20 @@
 
   <div id="navbar-container"></div>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
+  <!-- Mobile section navigation (visible only below lg breakpoint) -->
+  <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-lg">
+    <div class="flex overflow-x-auto gap-1.5 px-3 py-2.5 no-scrollbar">
+      <a href="#about"    class="mobile-nav-pill flex-shrink-0 text-xs font-medium text-gray-600 px-3 py-1.5 rounded-full border border-gray-200 hover:border-brand-400 hover:text-brand-600 transition-all whitespace-nowrap">About</a>
+      <a href="#positions" class="mobile-nav-pill flex-shrink-0 text-xs font-medium text-gray-600 px-3 py-1.5 rounded-full border border-gray-200 hover:border-brand-400 hover:text-brand-600 transition-all whitespace-nowrap">Positions</a>
+      <a href="#education" class="mobile-nav-pill flex-shrink-0 text-xs font-medium text-gray-600 px-3 py-1.5 rounded-full border border-gray-200 hover:border-brand-400 hover:text-brand-600 transition-all whitespace-nowrap">Education</a>
+      <a href="#publications" class="mobile-nav-pill flex-shrink-0 text-xs font-medium text-gray-600 px-3 py-1.5 rounded-full border border-gray-200 hover:border-brand-400 hover:text-brand-600 transition-all whitespace-nowrap">Publications</a>
+      <a href="#teaching" class="mobile-nav-pill flex-shrink-0 text-xs font-medium text-gray-600 px-3 py-1.5 rounded-full border border-gray-200 hover:border-brand-400 hover:text-brand-600 transition-all whitespace-nowrap">Teaching</a>
+      <a href="#projects" class="mobile-nav-pill flex-shrink-0 text-xs font-medium text-gray-600 px-3 py-1.5 rounded-full border border-gray-200 hover:border-brand-400 hover:text-brand-600 transition-all whitespace-nowrap">Projects</a>
+      <a href="#awards"   class="mobile-nav-pill flex-shrink-0 text-xs font-medium text-gray-600 px-3 py-1.5 rounded-full border border-gray-200 hover:border-brand-400 hover:text-brand-600 transition-all whitespace-nowrap">Awards</a>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12 pb-20 lg:pb-16">
 
     <section class="flex flex-col lg:flex-row items-start justify-between gap-10 border-b border-gray-200 pb-12">
 
@@ -64,8 +77,8 @@
             </div>
 
             <div class="flex items-center gap-3 text-gray-600">
-              <i class="fa-solid fa-building w-6 text-center text-gray-500"></i>
-              <span>Universidad Politécnica de Madrid, ROR: https://ror.org/03n6nwv02, Departamento de Arquitectura y Tecnología de Sistemas Informáticos (DATSI), Escuela Técnica Superior de Ingenieros Informáticos</span>
+              <i class="fa-solid fa-building w-6 text-center text-gray-500 flex-shrink-0"></i>
+              <span class="contact-text-wrap">Universidad Politécnica de Madrid, ROR: https://ror.org/03n6nwv02, Departamento de Arquitectura y Tecnología de Sistemas Informáticos (DATSI), Escuela Técnica Superior de Ingenieros Informáticos</span>
             </div>
 
             <div class="flex items-center gap-3 text-gray-600">
@@ -178,7 +191,7 @@
 
               <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
                 <div class="flex-1 px-4 flex items-center">
-                  <div class="w-[170px] shrink-0 flex justify-center">
+                  <div class="hidden sm:flex w-[170px] shrink-0 justify-center">
                     <img src="assets/logos/upm_logo_fondo.png" alt="UPM Logo" style="max-height:100px;max-width:150px;" class="pl-5"/>
                   </div>
                   <div class="px-4">
@@ -191,7 +204,7 @@
 
               <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
                 <div class="flex-1 px-4 flex items-center">
-                  <div class="w-[170px] shrink-0 flex justify-center">
+                  <div class="hidden sm:flex w-[170px] shrink-0 justify-center">
                     <img src="assets/logos/uc3m_fondo.png" alt="UC3M Logo" style="max-height:100px;max-width:150px;" class="pl-5"/>
                   </div>
                   <div class="px-4">
@@ -204,7 +217,7 @@
 
               <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
                 <div class="flex-1 px-4 flex items-center">
-                  <div class="w-[170px] shrink-0 flex justify-center">
+                  <div class="hidden sm:flex w-[170px] shrink-0 justify-center">
                     <img src="assets/logos/uc3m_fondo.png" alt="UC3M Logo" style="max-height:100px;max-width:150px;" class="pl-5"/>
                   </div>
                   <div class="px-4">
@@ -231,7 +244,7 @@
 
               <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
                 <div class="flex-1 px-4 flex items-center">
-                  <div class="w-[170px] shrink-0 flex justify-center">
+                  <div class="hidden sm:flex w-[170px] shrink-0 justify-center">
                     <img src="assets/logos/uc3m_fondo.png" alt="UC3M Logo" style="max-height:100px;max-width:150px;" class="pl-5"/>
                   </div>
                   <div class="px-4">
@@ -247,7 +260,7 @@
 
               <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
                 <div class="flex-1 px-4 flex items-center">
-                  <div class="w-[170px] shrink-0 flex justify-center">
+                  <div class="hidden sm:flex w-[170px] shrink-0 justify-center">
                     <img src="assets/logos/uc3m_fondo.png" alt="UC3M Logo" style="max-height:100px;max-width:150px;" class="pl-5"/>
                   </div>
                   <div class="px-4">
@@ -263,7 +276,7 @@
 
               <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
                 <div class="flex-1 px-4 flex items-center">
-                  <div class="w-[170px] shrink-0 flex justify-center">
+                  <div class="hidden sm:flex w-[170px] shrink-0 justify-center">
                     <img src="assets/logos/uc3m_fondo.png" alt="UC3M Logo" style="max-height:100px;max-width:150px;" class="pl-5"/>
                   </div>
                   <div class="px-4">
@@ -322,7 +335,7 @@
 
               <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
                 <div class="flex-1 px-4 flex items-center">
-                  <div class="w-[170px] shrink-0 flex justify-center">
+                  <div class="hidden sm:flex w-[170px] shrink-0 justify-center">
                     <img src="assets/logos/sciot_fondo.png" alt="SCIOT Logo" style="max-width:100%; height: 63px;" class="pl-5"/>
                   </div>
                   <div class="px-4">
@@ -341,7 +354,7 @@
 
               <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
                 <div class="flex-1 px-4 flex items-center">
-                  <div class="w-[170px] shrink-0 flex justify-center">
+                  <div class="hidden sm:flex w-[170px] shrink-0 justify-center">
                     <img src="assets/logos/creator_fondo.png" alt="CREATOR Logo" style="max-width:100%; height: 63px;" class="pl-5"/>
                   </div>
                   <div class="px-4">
@@ -360,7 +373,7 @@
 
               <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
                 <div class="flex-1 px-4 flex items-center">
-                  <div class="w-[170px] shrink-0 flex justify-center">
+                  <div class="hidden sm:flex w-[170px] shrink-0 justify-center">
                     <img src="assets/logos/expand_fondo.png" alt="Expand Logo" style="max-width:100%; height: 63px;" class="pl-5"/>
                   </div>
                   <div class="px-4">
@@ -379,7 +392,7 @@
 
               <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
                 <div class="flex-1 px-4 flex items-center">
-                  <div class="w-[170px] shrink-0 flex justify-center">
+                  <div class="hidden sm:flex w-[170px] shrink-0 justify-center">
                     <img src="assets/logos/decide_fondo.png" alt="DECIDE Logo" style="max-width:100%; height: 63px;" class="pl-5"/>
                   </div>
                   <div class="px-4">
@@ -398,7 +411,7 @@
 
               <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
                 <div class="flex-1 px-4 flex items-center">
-                  <div class="w-[170px] shrink-0 flex justify-center">
+                  <div class="hidden sm:flex w-[170px] shrink-0 justify-center">
                     <img src="assets/logos/cabahla_fondo.png" alt="CABAHLA Logo" style="max-width:100%; height: 63px;" class="pl-5"/>
                   </div>
                   <div class="px-4">

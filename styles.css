@@ -238,6 +238,28 @@ details[open] > summary .publication-chevron {
   transform: rotate(180deg);
 }
 
+/* Hide scrollbar on mobile nav */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Active pill in mobile nav */
+.mobile-nav-pill.active {
+  background-color: #f0fdfb;
+  border-color: #0f766e;
+  color: #0f766e;
+}
+
+/* Prevent long contact text from overflowing on mobile */
+.contact-text-wrap {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
 @media print {
   .no-print,
   .no-print *,

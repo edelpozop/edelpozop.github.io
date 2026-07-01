@@ -141,6 +141,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Highlight active section in mobile bottom nav
+  const mobilePills = document.querySelectorAll('.mobile-nav-pill');
+  if (mobilePills.length > 0 && 'IntersectionObserver' in window) {
+    const sectionIds = ['about', 'positions', 'education', 'publications', 'teaching', 'projects', 'awards'];
+    const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          mobilePills.forEach(p => p.classList.remove('active'));
+          const pill = document.querySelector(`.mobile-nav-pill[href="#${entry.target.id}"]`);
+          if (pill) pill.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    sectionEls.forEach(el => observer.observe(el));
+  }
+
   // Handle thesis links - prevent default and prepare for user's URLs
   const thesisLinks = document.querySelectorAll('.thesis-link');
   thesisLinks.forEach(link => {
@@ -314,9 +333,9 @@ async function loadTeaching() {
           </div>`;
       }).join('');
 
-      const logoHtml = instData.logo
-        ? `<img src="assets/logos/${instData.logo}.png" alt="${institution}" style="max-height:36px;max-width:110px;" class="object-contain flex-shrink-0">`
-        : '';
+    const logoHtml = instData.logo
+      ? `<img src="assets/logos/${instData.logo}.png" alt="${institution}" class="flex-shrink-0 object-contain" style="max-height:32px;max-width:100px;">`
+      : '';
 
       return `
         <details class="${detailsClass}">
