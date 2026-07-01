@@ -310,12 +310,6 @@ async function loadTeaching() {
 
         const periodsHtml = `<div class="flex flex-wrap gap-1.5 mt-2">${
           subject.periods.map(p =>
-            `<span style="font-size:0.7rem;padding:2px 8px;border-radius:9999px;background:#f3f4f6;color:#374151;border:1px solid #e5e7eb;font-weight:500;">${p.academicYear}</span>`
-          ).join('')
-        }</div>`;
-
-        const periodsHtml = `<div class="flex flex-wrap gap-1.5 mt-2">${
-          subject.periods.map(p =>
             `<span style="font-size:0.7rem;padding:2px 8px;border-radius:9999px;background:#f3f4f6;color:#374151;border:1px solid #e5e7eb;font-weight:500;white-space:nowrap;flex-shrink:0;">${p.academicYear}</span>`
           ).join('')
         }</div>`;
