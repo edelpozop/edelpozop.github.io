@@ -334,7 +334,7 @@ async function loadTeaching() {
       }).join('');
 
     const logoHtml = instData.logo
-      ? `<img src="assets/logos/${instData.logo}.png" alt="${institution}" class="flex-shrink-0 object-contain" style="max-height:32px;max-width:100px;">`
+      ? `<img src="assets/logos/${instData.logo}.png" alt="${institution}" class="flex-shrink-0 object-contain" style="max-height:100px;max-width:150px;">`
       : '';
 
       return `
