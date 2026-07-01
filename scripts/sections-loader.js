@@ -289,19 +289,11 @@ async function loadTeaching() {
       const subjectCards = Object.values(instData.subjects).map(subject => {
         subject.periods.sort((a, b) => b.academicYear.localeCompare(a.academicYear));
 
-        const periodsHtml = subject.periods.map(p => {
-          const groupChips = p.groups.length > 0
-            ? p.groups.map(g =>
-                `<span style="font-size:0.7rem;padding:1px 7px;border-radius:9999px;font-weight:500;${getRatingStyle(g.rating)}">Gr. ${g.id} &middot; ${g.rating.toFixed(2)}/5</span>`
-              ).join('')
-            : '';
-          return `
-            <div class="flex flex-wrap items-center gap-2 text-sm py-1 border-t border-gray-100 first:border-0">
-              <span class="font-semibold text-gray-700 min-w-24">${p.academicYear}</span>
-              <span class="text-gray-500">${p.period}</span>
-              ${groupChips}
-            </div>`;
-        }).join('');
+        const periodsHtml = `<div class="flex flex-wrap gap-2 mt-2">${
+          subject.periods.map(p =>
+            `<span style="font-size:0.72rem;padding:2px 10px;border-radius:9999px;background:#f3f4f6;color:#374151;border:1px solid #e5e7eb;font-weight:500;">${p.academicYear}</span>`
+          ).join('')
+        }</div>`;
 
         const courseLinkHtml = subject.courseLink
           ? `<a target="_blank" href="${subject.courseLink}" class="flex-shrink-0 ml-4 p-2 text-gray-400 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-all self-start mt-1">
