@@ -308,9 +308,9 @@ async function loadTeaching() {
       const subjectCards = Object.values(instData.subjects).map(subject => {
         subject.periods.sort((a, b) => b.academicYear.localeCompare(a.academicYear));
 
-        const periodsHtml = `<div class="flex flex-wrap gap-1.5 mt-2">${
+        const periodsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;max-width:100%;">${
           subject.periods.map(p =>
-            `<span style="font-size:0.7rem;padding:2px 8px;border-radius:9999px;background:#f3f4f6;color:#374151;border:1px solid #e5e7eb;font-weight:500;white-space:nowrap;flex-shrink:0;">${p.academicYear}</span>`
+            `<span style="font-size:0.7rem;padding:2px 8px;border-radius:9999px;background:#f3f4f6;color:#374151;border:1px solid #e5e7eb;font-weight:500;white-space:nowrap;">${p.academicYear}</span>`
           ).join('')
         }</div>`;
 
@@ -321,9 +321,9 @@ async function loadTeaching() {
           : '';
 
         return `
-          <div class="p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all mb-3">
+          <div style="overflow:hidden;" class="p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all mb-3">
             <div class="flex items-start">
-              <div class="min-w-0 flex-1">
+              <div style="min-width:0;flex:1;">
                 <h4 class="text-base font-bold text-gray-900">${subject.name}</h4>
                 <p class="text-sm text-gray-400 italic mb-1">${subject.degree}</p>
                 ${periodsHtml}
