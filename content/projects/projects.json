@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-      "name": "Nuevas técnicas escalables de E/S para cargas de trabajo híbridas de HPC e intensivas en datos (SCIOT)",
+      "name": "Nuevas técnicas escalables de E/S para cargas de trabajo híbridas de HPC<br>e intensivas en datos (SCIOT)",
       "funder": "Agencia estatal de Investigación (AEI)",
       "period": "2022-2026",
       "grant": "PID2022-138050NB-I00",
@@ -9,7 +9,7 @@
       "url": "https://researchportal.uc3m.es/individual/act560656"
     },
     {
-      "name": "Integrated development environment for teaching and research on RISC-V processors",
+      "name": "Integrated development environment for teaching and research<br>on RISC-V processors",
       "funder": "Agencia estatal de Investigación (AEI). PERTE CHIP",
       "period": "2023-2025",
       "grant": "PDC2023-145832-I00",
@@ -17,7 +17,7 @@
       "url": "https://researchportal.uc3m.es/display/act562858"
     },
     {
-      "name": "Sistema de almacenamiento de altas prestaciones para entornos HPC y Big Data (Expand)",
+      "name": "Sistema de almacenamiento de altas prestaciones para entornos HPC<br>y Big Data (Expand)",
       "funder": "Agencia estatal de Investigación (AEI)",
       "period": "2021-2025",
       "grant": "TED2021-131798B-I00",
@@ -25,7 +25,7 @@
       "url": "https://researchportal.uc3m.es/display/act556234"
     },
     {
-      "name": "New Data Intensive Computing Methods for High-End and Edge Computing Platforms (DECIDE)",
+      "name": "New Data Intensive Computing Methods for High-End<br>and Edge Computing Platforms (DECIDE)",
       "funder": "Agencia estatal de Investigación (AEI)",
       "period": "2019-2023",
       "grant": "PID2019-107858GB-I00",
