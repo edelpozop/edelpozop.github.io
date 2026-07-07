@@ -199,8 +199,229 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Ejecutar la función
+loadAbout();
+loadLinks();
+loadPositions();
+loadEducation();
 loadPublications();
 loadTeaching();
+loadSoftware();
+loadProjects();
+loadAwards();
+
+async function loadAbout() {
+  const container = document.getElementById('about-content');
+  if (!container) return;
+  try {
+    const res = await fetch('./content/about/about.json');
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    container.innerHTML = data.paragraphs.map(p => `<p class="mt-4">${p}</p>`).join('');
+  } catch {
+    container.innerHTML = '<p class="text-red-400 italic text-sm">Error loading about section.</p>';
+  }
+}
+
+async function loadLinks() {
+  const container = document.getElementById('links-aside');
+  if (!container) return;
+  try {
+    const res = await fetch('./content/links/links.json');
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    const linksHtml = data.links.map(l => `
+      <li class="flex items-center gap-3">
+        <i class="${l.icon} text-brand-600 fa-lg"></i>
+        <a href="${l.url}" target="_blank" class="text-brand-600 hover:underline">${l.label}</a>
+      </li>`).join('');
+    container.innerHTML = `
+      <h3 class="text-lg font-semibold text-gray-900 mb-5 border-b pb-2">Links</h3>
+      <ul class="space-y-4 text-sm text-gray-700">${linksHtml}</ul>
+      <div class="mt-6 border-t border-gray-100 pt-4">
+        <h3 class="text-sm font-semibold text-gray-900 mb-3">Collaboration Network</h3>
+        <div id="collab-graph" class="w-full rounded-lg bg-gray-50 border border-gray-100 overflow-hidden" style="min-height:210px;">
+          <p class="text-xs text-gray-400 italic p-3 text-center">Loading graph...</p>
+        </div>
+      </div>`;
+  } catch {
+    container.innerHTML = '<p class="text-red-400 italic text-sm">Error loading links.</p>';
+  }
+}
+
+function renderStaticCard({ logo, title, subtitle, detail, linkUrl }) {
+  const logoHtml = logo
+    ? `<div class="hidden sm:flex w-[170px] shrink-0 justify-center">
+         <img src="assets/logos/${logo}.png" alt="" style="max-height:63px;max-width:150px;" class="pl-5 object-contain">
+       </div>`
+    : '';
+  const linkHtml = linkUrl
+    ? `<a href="${linkUrl}" target="_blank" class="flex-shrink-0 ml-4 p-2 text-gray-400 hover:text-brand-600 rounded-lg transition-all">
+         <i class="fa-solid fa-book text-xl"></i>
+       </a>`
+    : '';
+  return `
+    <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
+      <div class="flex-1 px-4 flex items-center">
+        ${logoHtml}
+        <div class="px-4">
+          <h4 class="font-bold text-gray-800 group-hover:text-brand-600 transition">${title}</h4>
+          ${subtitle ? `<p class="text-sm text-gray-500">${subtitle}</p>` : ''}
+          ${detail ? `<p class="text-sm text-gray-500">${detail}</p>` : ''}
+        </div>
+      </div>
+      ${linkHtml}
+    </div>`;
+}
+
+async function loadPositions() {
+  const container = document.getElementById('positions-list');
+  if (!container) return;
+  try {
+    const res = await fetch('./content/positions/positions.json');
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    container.innerHTML = data.positions.map(p => renderStaticCard({
+      logo: p.logo,
+      title: p.title,
+      subtitle: p.period,
+      detail: p.institution
+    })).join('');
+  } catch {
+    container.innerHTML = '<p class="text-red-400 italic text-sm">Error loading positions.</p>';
+  }
+}
+
+async function loadEducation() {
+  const container = document.getElementById('education-list');
+  if (!container) return;
+  try {
+    const res = await fetch('./content/education/education.json');
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    container.innerHTML = data.education.map(e => {
+      const logoHtml = e.logo
+        ? `<div class="hidden sm:flex w-[170px] shrink-0 justify-center">
+             <img src="assets/logos/${e.logo}.png" alt="" style="max-height:63px;max-width:150px;" class="pl-5 object-contain">
+           </div>`
+        : '';
+      const thesisLink = e.thesisUrl
+        ? `<a href="${e.thesisUrl}" target="_blank" class="thesis-link flex-shrink-0 ml-4 p-2 text-gray-400 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-all">
+             <i class="fa-solid fa-book text-xl"></i>
+           </a>`
+        : '';
+      const minor = e.minor ? `<p class="text-sm text-gray-500">${e.minor}</p>` : '';
+      return `
+        <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
+          <div class="flex-1 px-4 flex items-center">
+            ${logoHtml}
+            <div class="px-4">
+              <h4 class="font-bold text-gray-800 group-hover:text-brand-600 transition">${e.degree}</h4>
+              ${minor}
+              <p class="text-sm text-gray-500">${e.period}</p>
+              <p class="text-sm text-gray-500">Thesis: ${e.thesis}</p>
+            </div>
+          </div>
+          ${thesisLink}
+        </div>`;
+    }).join('');
+  } catch {
+    container.innerHTML = '<p class="text-red-400 italic text-sm">Error loading education.</p>';
+  }
+}
+
+async function loadProjects() {
+  const container = document.getElementById('projects-list');
+  if (!container) return;
+  try {
+    const res = await fetch('./content/projects/projects.json');
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    container.innerHTML = data.projects.map(p => {
+      const logoHtml = p.logo
+        ? `<div class="hidden sm:flex w-[170px] shrink-0 justify-center">
+             <img src="assets/logos/${p.logo}.png" alt="" style="max-width:100%;height:63px;" class="pl-5 object-contain">
+           </div>`
+        : '';
+      return `
+        <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
+          <div class="flex-1 px-4 flex items-center">
+            ${logoHtml}
+            <div class="px-4">
+              <h4 class="font-bold text-gray-800 group-hover:text-brand-600 transition">${p.name}</h4>
+              <p class="text-sm text-gray-500">${p.funder}</p>
+              <p class="text-sm text-gray-500">${p.period}</p>
+              <p class="text-sm text-gray-500">Grant: ${p.grant}</p>
+            </div>
+          </div>
+          <div>
+            <a href="${p.url}" target="_blank" class="text-gray-400 hover:text-brand-600">
+              <i class="fa-solid fa-globe text-xl"></i>
+            </a>
+          </div>
+        </div>`;
+    }).join('');
+  } catch {
+    container.innerHTML = '<p class="text-red-400 italic text-sm">Error loading projects.</p>';
+  }
+}
+
+async function loadAwards() {
+  const container = document.getElementById('awards-list');
+  if (!container) return;
+  try {
+    const res = await fetch('./content/awards/awards.json');
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    container.innerHTML = data.awards.map(a => `
+      <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
+        <div class="flex-1 px-4 flex items-center">
+          <div class="px-4">
+            <h4 class="font-bold text-gray-800 group-hover:text-brand-600 transition">${a.title}</h4>
+            <p class="text-sm text-gray-500">${a.date}</p>
+            <p class="text-sm text-gray-500">${a.institution}</p>
+          </div>
+        </div>
+      </div>`).join('');
+  } catch {
+    container.innerHTML = '<p class="text-red-400 italic text-sm">Error loading awards.</p>';
+  }
+}
+
+async function loadSoftware() {
+  const container = document.getElementById('software-list');
+  if (!container) return;
+  try {
+    const res = await fetch('./content/software/software.json');
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    container.innerHTML = data.software.map(s => {
+      const githubLink = s.github
+        ? `<a href="${s.github}" target="_blank" class="text-xs font-medium text-brand-600 hover:text-brand-800 hover:underline"><i class="fa-brands fa-github fa-lg mr-1"></i>GitHub</a>`
+        : '';
+      const webLink = s.url
+        ? `<a href="${s.url}" target="_blank" class="text-xs font-medium text-brand-600 hover:text-brand-800 hover:underline"><i class="fa-solid fa-globe fa-lg mr-1"></i>Web page</a>`
+        : '';
+      return `
+        <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
+          <div class="flex-1 px-4 flex items-center">
+            <div class="w-[170px] shrink-0 flex justify-center">
+              <img src="${s.logo}" alt="${s.name}" style="max-width:100%;height:63px;" class="pl-5 object-contain">
+            </div>
+            <div class="px-4">
+              <h4 class="font-bold text-gray-800 group-hover:text-brand-600 transition">${s.name}</h4>
+              <p class="text-sm text-gray-500">${s.description}</p>
+              <div class="mt-1">
+                <span class="text-sm" style="padding:2px 8px;border-radius:9999px;background:#edf7ed;color:#1e4620;border:1px solid #c8e6c9;font-weight:500;">${s.license}</span>
+              </div>
+              <div class="mt-3 flex gap-3">${githubLink}${webLink}</div>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  } catch {
+    container.innerHTML = '<p class="text-red-400 italic text-sm">Error loading software.</p>';
+  }
+}
 
 async function loadTeaching() {
   const container = document.getElementById('teaching-list');

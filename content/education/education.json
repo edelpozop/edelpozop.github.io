@@ -1,0 +1,29 @@
+{
+  "education": [
+    {
+      "degree": "Ph.D. in Computer Science and Technology",
+      "period": "2020-2025 (Cum Laude)",
+      "institution": "Universidad Carlos III de Madrid",
+      "logo": "uc3m_fondo",
+      "thesis": "Data Management Techniques in High-End and Edge Computing Systems",
+      "thesisUrl": "https://hdl.handle.net/10016/49929"
+    },
+    {
+      "degree": "M.Sc. in Computer Science and Technology",
+      "period": "2019-2020 (9.9/10)",
+      "institution": "Universidad Carlos III de Madrid",
+      "logo": "uc3m_fondo",
+      "thesis": "Desarrollo de un simulador genérico para infraestructuras Edge y Fog Computing",
+      "thesisUrl": null
+    },
+    {
+      "degree": "B.Sc. in Computer Science and Engineering",
+      "period": "2015-2019 (9.6/10)",
+      "institution": "Universidad Carlos III de Madrid",
+      "logo": "uc3m_fondo",
+      "minor": "Minor in Computer Engineering",
+      "thesis": "Diseño y desarrollo de un sistema de ficheros distribuido y paralelo basado en Apache Cassandra",
+      "thesisUrl": "https://hdl.handle.net/10016/29876"
+    }
+  ]
+}

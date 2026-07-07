@@ -1,0 +1,22 @@
+{
+  "positions": [
+    {
+      "title": "Post-Doctoral Researcher",
+      "period": "March 2026 - Present",
+      "institution": "Universidad Politécnica de Madrid (UPM)",
+      "logo": "upm_logo_fondo"
+    },
+    {
+      "title": "Research Support Technician",
+      "period": "September 2025 - December 2025",
+      "institution": "Universidad Carlos III de Madrid - RISC-V IDE Project",
+      "logo": "uc3m_fondo"
+    },
+    {
+      "title": "Doctoral Training (FPI Grant)",
+      "period": "September 2020 - July 2025",
+      "institution": "Universidad Carlos III de Madrid - ARCOS Research Group",
+      "logo": "uc3m_fondo"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Elias Del Pozo Puñal",
+  "title": "Post-Doctoral Researcher at Polytechnic University of Madrid (UPM)",
+  "photo": "assets/images/image.png",
+  "email": "e.delpozo@upm.es",
+  "phone": "+34 910 672 855",
+  "affiliation": "Universidad Politécnica de Madrid, ROR: https://ror.org/03n6nwv02, Departamento de Arquitectura y Tecnología de Sistemas Informáticos (DATSI), Escuela Técnica Superior de Ingenieros Informáticos",
+  "address": "Campus Montegancedo, Boadilla del Monte, 28660. Madrid, Spain",
+  "logos": [
+    {
+      "src": "assets/logos/etsiinf.png",
+      "alt": "ETSIINF",
+      "url": "https://www.etsiinf.upm.es/",
+      "title": "Open the UPM website.",
+      "class": "w-48"
+    },
+    {
+      "src": "assets/logos/arcos.png",
+      "alt": "ARCOS Research Group",
+      "url": "https://arcos-uc3m.github.io/",
+      "title": "Open the ARCOS website.",
+      "class": "w-44"
+    }
+  ]
+}
