@@ -36,6 +36,9 @@
           <div id="collab-graph-container" style="flex:1;overflow:hidden;position:relative;background:#f8fafc;">
             <p style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:0.8rem;color:#94a3b8;font-style:italic;white-space:nowrap;">Fetching data…</p>
           </div>
+          <div style="padding:8px 20px;border-top:1px solid #f1f5f9;font-size:0.68rem;color:#94a3b8;flex-shrink:0;">
+            Data from <a href="https://openalex.org" target="_blank" style="color:#0f766e;">OpenAlex</a> · Drag nodes · Scroll or pinch to zoom
+          </div>
         </div>
       </div>`;
     document.body.appendChild(modal);
@@ -132,7 +135,21 @@
       .attr('width', '100%')
       .attr('height', '100%')
       .attr('viewBox', `0 0 ${w} ${h}`)
-      .style('background', '#f8fafc');
+      .style('background', '#f8fafc')
+      .style('cursor', 'grab');
+
+    // Zoom behaviour — wrap all content in a <g> that gets transformed
+    const zoomLayer = svg.append('g');
+
+    const zoom = d3.zoom()
+      .scaleExtent([0.3, 4])
+      .on('zoom', event => {
+        zoomLayer.attr('transform', event.transform);
+        svg.style('cursor', event.sourceEvent?.type === 'mousedown' ? 'grabbing' : 'grab');
+      });
+
+    svg.call(zoom)
+       .on('dblclick.zoom', null); // disable double-click zoom reset
 
     const defs = svg.append('defs');
     defs.append('radialGradient').attr('id', 'main-node-grad')
@@ -150,7 +167,7 @@
       .force('collision', d3.forceCollide().radius(d => nodeRadius(d) + 22));
 
     // Edge weight legend shading
-    const linkEl = svg.append('g')
+    const linkEl = zoomLayer.append('g')
       .selectAll('line').data(graphData.links).join('line')
       .attr('stroke', d => {
         const src = d.source.colorIdx !== undefined ? NODE_COLORS[d.source.colorIdx % NODE_COLORS.length] : '#0f766e';
@@ -159,7 +176,7 @@
       .attr('stroke-opacity', 0.35)
       .attr('stroke-width', d => 1 + Math.min(d.value, 8) * 0.35);
 
-    const nodeGroup = svg.append('g').selectAll('g').data(graphData.nodes).join('g')
+    const nodeGroup = zoomLayer.append('g').selectAll('g').data(graphData.nodes).join('g')
       .style('cursor', d => (d.orcid || !d.main) ? 'pointer' : 'default')
       .call(d3.drag()
         .on('start', (event, d) => { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
@@ -171,7 +188,7 @@
         // Ignore if user was dragging
         if (event.defaultPrevented) return;
         const url = d.orcid
-          ? `https://orcid.org/${d.orcid}`
+          ? `${d.orcid}`
           : `${d.id}`; // OpenAlex URL
         window.open(url, '_blank', 'noopener');
       });
