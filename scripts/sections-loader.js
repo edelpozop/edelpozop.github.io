@@ -239,9 +239,11 @@ async function loadLinks() {
       <ul class="space-y-4 text-sm text-gray-700">${linksHtml}</ul>
       <div class="mt-6 border-t border-gray-100 pt-4">
         <h3 class="text-sm font-semibold text-gray-900 mb-3">Collaboration Network</h3>
-        <div id="collab-graph" class="w-full rounded-lg bg-gray-50 border border-gray-100 overflow-hidden" style="min-height:210px;">
-          <p class="text-xs text-gray-400 italic p-3 text-center">Loading graph...</p>
-        </div>
+        <button id="open-collab-graph"
+          class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 hover:bg-white hover:border-brand-300 hover:shadow-sm text-sm font-medium text-gray-600 hover:text-brand-600 transition-all">
+          <i class="fa-solid fa-diagram-project text-brand-500"></i>
+          View Collaboration Graph
+        </button>
       </div>`;
   } catch {
     container.innerHTML = '<p class="text-red-400 italic text-sm">Error loading links.</p>';
