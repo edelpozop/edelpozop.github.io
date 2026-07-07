@@ -36,9 +36,6 @@
           <div id="collab-graph-container" style="flex:1;overflow:hidden;position:relative;background:#f8fafc;">
             <p style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:0.8rem;color:#94a3b8;font-style:italic;white-space:nowrap;">Fetching data…</p>
           </div>
-          <div style="padding:8px 20px;border-top:1px solid #f1f5f9;font-size:0.68rem;color:#94a3b8;flex-shrink:0;">
-            Data from <a href="https://openalex.org" target="_blank" style="color:#0f766e;">OpenAlex</a> · Drag nodes · Scroll or pinch to zoom
-          </div>
         </div>
       </div>`;
     document.body.appendChild(modal);
@@ -142,7 +139,7 @@
     const zoomLayer = svg.append('g');
 
     const zoom = d3.zoom()
-      .scaleExtent([0.3, 4])
+      .scaleExtent([1.8, 4])
       .on('zoom', event => {
         zoomLayer.attr('transform', event.transform);
         svg.style('cursor', event.sourceEvent?.type === 'mousedown' ? 'grabbing' : 'grab');
@@ -177,7 +174,7 @@
       .attr('stroke-width', d => 1 + Math.min(d.value, 8) * 0.35);
 
     const nodeGroup = zoomLayer.append('g').selectAll('g').data(graphData.nodes).join('g')
-      .style('cursor', d => (d.orcid || !d.main) ? 'pointer' : 'default')
+      .style('cursor', d => d.orcid ? 'pointer' : 'default')
       .call(d3.drag()
         .on('start', (event, d) => { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
         .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
@@ -185,11 +182,10 @@
       )
       .on('click', (event, d) => {
         event.stopPropagation();
-        // Ignore if user was dragging
         if (event.defaultPrevented) return;
-        const url = d.orcid
-          ? `${d.orcid}`
-          : `${d.id}`; // OpenAlex URL
+        if (!d.orcid) return; // no link if no ORCID
+        // OpenAlex returns full URL; main node stores raw ID only
+        const url = d.orcid.startsWith('http') ? d.orcid : `https://orcid.org/${d.orcid}`;
         window.open(url, '_blank', 'noopener');
       });
 
@@ -239,7 +235,7 @@
     nodeGroup.append('title').text(d =>
       d.main
         ? `${d.name}\n${graphData.totalWorks} publications\nClick to open ORCID`
-        : `${d.name}\n${d.count} shared paper${d.count !== 1 ? 's' : ''}\n${d.orcid ? 'Click to open ORCID' : 'Click to open OpenAlex profile'}`
+        : `${d.name}\n${d.count} shared paper${d.count !== 1 ? 's' : ''}${d.orcid ? '\nClick to open ORCID' : ''}`
     );
 
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
