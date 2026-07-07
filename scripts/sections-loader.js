@@ -405,7 +405,7 @@ async function loadSoftware() {
         <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
           <div class="flex-1 px-4 flex items-center">
             <div class="hidden sm:flex w-[170px] shrink-0 flex justify-center">
-              <img src="${s.logo}" alt="${s.name}" style="max-width:100%;height:height:63px;" class="pl-5 object-contain">
+              <img src="${s.logo}" alt="${s.name}" style="max-width:100%;height:63px;" class="pl-5 object-contain">
             </div>
             <div class="px-4">
               <h4 class="font-bold text-gray-800 group-hover:text-brand-600 transition">${s.name}</h4>
