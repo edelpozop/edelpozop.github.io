@@ -139,14 +139,21 @@
     const zoomLayer = svg.append('g');
 
     const zoom = d3.zoom()
-      .scaleExtent([1.8, 4])
+      .scaleExtent([0.5, 4])
       .on('zoom', event => {
         zoomLayer.attr('transform', event.transform);
         svg.style('cursor', event.sourceEvent?.type === 'mousedown' ? 'grabbing' : 'grab');
       });
 
+    // Apply zoom centered on SVG at initial scale 1.8
+    const initialScale = 1.8;
+    const initialTransform = d3.zoomIdentity
+      .translate(w / 2 * (1 - initialScale), h / 2 * (1 - initialScale))
+      .scale(initialScale);
+
     svg.call(zoom)
-       .on('dblclick.zoom', null); // disable double-click zoom reset
+       .call(zoom.transform, initialTransform)
+       .on('dblclick.zoom', null);
 
     const defs = svg.append('defs');
     defs.append('radialGradient').attr('id', 'main-node-grad')
