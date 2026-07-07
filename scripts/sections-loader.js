@@ -354,7 +354,7 @@ async function loadProjects() {
             </div>
           </div>
           <div>
-            <a href="${p.url}" target="_blank" class="text-gray-400 hover:text-brand-600">
+            <a href="${p.url}" target="_blank" class="text-gray-400 hover:text-brand-600 hover:text-brand-800 hover:underline">
               <i class="fa-solid fa-globe text-xl"></i>
             </a>
           </div>
@@ -404,7 +404,7 @@ async function loadSoftware() {
       return `
         <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
           <div class="flex-1 px-4 flex items-center">
-            <div class="w-[170px] shrink-0 flex justify-center">
+            <div class="hidden sm:flex w-[170px] shrink-0 flex justify-center">
               <img src="${s.logo}" alt="${s.name}" style="max-width:100%;height:height:63px;" class="pl-5 object-contain">
             </div>
             <div class="px-4">
