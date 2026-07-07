@@ -339,7 +339,7 @@ async function loadProjects() {
     container.innerHTML = data.projects.map(p => {
       const logoHtml = p.logo
         ? `<div class="hidden sm:flex w-[170px] shrink-0 justify-center">
-             <img src="assets/logos/${p.logo}.png" alt="" style="max-width:100%;height:63px;" class="pl-5 object-contain">
+             <img src="assets/logos/${p.logo}.png" alt="" style="max-width:100%;height:100px;" class="pl-5 object-contain">
            </div>`
         : '';
       return `
