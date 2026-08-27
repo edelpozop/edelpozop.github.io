@@ -238,13 +238,9 @@ details[open] > summary .publication-chevron {
   transform: rotate(180deg);
 }
 
-/* Hide scrollbar on mobile nav */
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+/* Tailwind's flex-wrap utility isn't in the compiled output.css bundle */
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 /* Active pill in mobile nav */
