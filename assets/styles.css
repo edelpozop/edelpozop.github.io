@@ -238,9 +238,30 @@ details[open] > summary .publication-chevron {
   transform: rotate(180deg);
 }
 
-/* Tailwind's flex-wrap utility isn't in the compiled output.css bundle */
+/* Tailwind utilities missing from the compiled output.css bundle */
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Visible, grabbable scrollbar for the mobile bottom nav */
+#mobile-nav-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #99e6e0 transparent;
+}
+#mobile-nav-scroll::-webkit-scrollbar {
+  height: 5px;
+}
+#mobile-nav-scroll::-webkit-scrollbar-thumb {
+  background-color: #99e6e0;
+  border-radius: 9999px;
+}
+#mobile-nav-scroll::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 /* Active pill in mobile nav */
