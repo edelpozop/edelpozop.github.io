@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Auto-expand sections when clicking sidebar links
-  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  // Auto-expand sections when clicking sidebar or mobile nav links
+  const sidebarLinks = document.querySelectorAll('.sidebar-link, .mobile-nav-pill');
   sidebarLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Highlight active section in mobile bottom nav
   const mobilePills = document.querySelectorAll('.mobile-nav-pill');
   if (mobilePills.length > 0 && 'IntersectionObserver' in window) {
-    const sectionIds = ['about', 'positions', 'education', 'publications', 'teaching', 'projects', 'awards'];
+    const sectionIds = ['about', 'positions', 'education', 'publications', 'teaching', 'software', 'projects', 'awards', 'other'];
     const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
     const observer = new IntersectionObserver((entries) => {
