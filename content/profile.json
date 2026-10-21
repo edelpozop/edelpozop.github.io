@@ -1,6 +1,23 @@
 {
   "name": "Elias Del Pozo Puñal",
   "title": "Post-Doctoral Researcher",
+  "positions": [
+    {
+      "role": "Assistant Professor",
+      "details": [
+        "Departamento de Arquitectura y Tecnología de Sistemas Informáticos (DATSI)",
+        "Universidad Politécnica de Madrid (UPM)"
+      ]
+    },
+    {
+      "role": "External Research Collaborator",
+      "details": [
+        "Computer Architecture Research Group (ARCOS)",
+        "Computer Science and Engineering Department",
+        "Universidad Carlos III de Madrid (UC3M)"
+      ]
+    }
+  ],
   "photo": "assets/images/image.png",
   "email": "e.delpozo@upm.es",
   "phone": "+34 910 672 855",
@@ -13,6 +30,13 @@
       "url": "https://www.etsiinf.upm.es/",
       "title": "Open the UPM website.",
       "class": "w-48"
+    },
+    {
+      "src": "assets/logos/datsi.png",
+      "alt": "DATSI",
+      "url": "https://datsi.ws.fi.upm.es/",
+      "title": "Open the DATSI website.",
+      "class": "w-44"
     },
     {
       "src": "assets/logos/arcos.png",

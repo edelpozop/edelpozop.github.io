@@ -12,6 +12,16 @@ async function loadProfile() {
         <img src="${l.src}" alt="${l.alt}" class="${l.class} h-auto object-contain transition duration-300">
       </a>`).join('');
 
+    const positionsHtml = (p.positions || []).map(pos => `
+      <div class="text-center sm:text-left">
+        <p class="text-xl text-gray-600 font-light">${pos.role}</p>
+        ${(pos.details || []).map(d => `<p class="text-sm text-gray-500">${d}</p>`).join('')}
+      </div>`).join('');
+
+    const titleHtml = positionsHtml
+      ? `<div class="flex flex-col gap-4 mb-4">${positionsHtml}</div>`
+      : `<p class="text-xl text-gray-600 font-light mb-4 text-center sm:text-left">${p.title}</p>`;
+
     headerContainer.innerHTML = `
       <div class="flex flex-col items-center gap-1 flex-shrink-0 w-52 self-center sm:self-start">
         <img src="${p.photo}" alt="${p.name}"
@@ -25,7 +35,7 @@ async function loadProfile() {
         <h1 class="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-center sm:text-left">
           ${p.name}
         </h1>
-        <p class="text-xl text-gray-600 font-light mb-4 text-center sm:text-left">${p.title}</p>
+        ${titleHtml}
 
         <div class="flex flex-col gap-3 mt-8">
           <div class="flex items-center gap-3 text-gray-600">
