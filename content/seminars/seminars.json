@@ -1,0 +1,15 @@
+{
+  "seminars": [
+    {
+      "title": "Modelling and Simulating the Computing Continuum with ENIGMA",
+      "type": "Tutorial",
+      "event": "28th International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems (MSWiM 2026)",
+      "location": "Paris, France",
+      "date": "October 2026",
+      "logo": "assets/logos/mswim.png",
+      "paper": "https://mswimconf.com/2026/proceedings/mswim/0009_1189070.pdf",
+      "slides": "assets/slides/Tutorial_ENIGMA_Elias_MSWiM26.pdf",
+      "url": "https://mswimconf.com/2026/tutorials.html"
+    }
+  ]
+}

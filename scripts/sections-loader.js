@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Highlight active section in mobile bottom nav
   const mobilePills = document.querySelectorAll('.mobile-nav-pill');
   if (mobilePills.length > 0 && 'IntersectionObserver' in window) {
-    const sectionIds = ['about', 'positions', 'education', 'publications', 'teaching', 'software', 'projects', 'awards', 'other'];
+    const sectionIds = ['about', 'positions', 'education', 'publications', 'teaching', 'software', 'seminars', 'projects', 'awards', 'other'];
     const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
     const observer = new IntersectionObserver((entries) => {
@@ -206,6 +206,7 @@ loadEducation();
 loadPublications();
 loadTeaching();
 loadSoftware();
+loadSeminars();
 loadProjects();
 loadAwards();
 
@@ -420,6 +421,46 @@ async function loadSoftware() {
     }).join('');
   } catch {
     container.innerHTML = '<p class="text-red-400 italic text-sm">Error loading software.</p>';
+  }
+}
+
+async function loadSeminars() {
+  const container = document.getElementById('seminars-list');
+  if (!container) return;
+  try {
+    const res = await fetch('./content/seminars/seminars.json');
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    container.innerHTML = data.seminars.map(s => {
+      const logoHtml = s.logo
+        ? `<div class="hidden sm:flex w-[170px] shrink-0 justify-center">
+             <img src="${s.logo}" alt="${s.event}" style="max-width:100%;height:63px;" class="pl-5 object-contain">
+           </div>`
+        : '';
+      const paperLink = s.paper
+        ? `<a href="${s.paper}" target="_blank" class="text-xs font-medium text-brand-600 hover:text-brand-800 hover:underline"><i class="fa-solid fa-file-lines fa-lg mr-1"></i>Article</a>`
+        : '';
+      const slidesLink = s.slides
+        ? `<a href="${s.slides}" target="_blank" class="text-xs font-medium text-brand-600 hover:text-brand-800 hover:underline"><i class="fa-solid fa-person-chalkboard fa-lg mr-1"></i>Slides</a>`
+        : '';
+      const webLink = s.url
+        ? `<a href="${s.url}" target="_blank" class="text-xs font-medium text-brand-600 hover:text-brand-800 hover:underline"><i class="fa-solid fa-globe fa-lg mr-1"></i>Web page</a>`
+        : '';
+      return `
+        <div class="group flex items-center justify-between p-4 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all">
+          <div class="flex-1 px-4 flex items-center">
+            ${logoHtml}
+            <div class="px-4">
+              <h4 class="font-bold text-gray-800 group-hover:text-brand-600 transition">${s.title}</h4>
+              <p class="text-sm text-gray-500">${s.type} · ${s.event}</p>
+              <p class="text-sm text-gray-500">${s.location} · ${s.date}</p>
+              <div class="mt-3 flex gap-3">${paperLink}${slidesLink}${webLink}</div>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  } catch {
+    container.innerHTML = '<p class="text-red-400 italic text-sm">Error loading seminars.</p>';
   }
 }
 
